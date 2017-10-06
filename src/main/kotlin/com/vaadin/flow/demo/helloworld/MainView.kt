@@ -37,6 +37,7 @@ class MainView : VerticalLayout() {
         h2("The traditional Vaadin 8 hello-world in Vaadin 10")
         val name = textField("Your name:") {
             placeholder = "Please enter your name:"
+            addValueChangeListener {  }  // workaround for https://github.com/vaadin/flow/issues/2591
         }
         button("Click me") {
             onLeftClick {
