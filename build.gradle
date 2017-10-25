@@ -37,7 +37,7 @@ webResource {
 
     bower {
         dependencies {
-            install name: "polymer", version: "~2.0.2"
+            install name: "polymer", version: "2.1.1"
             install name: "vaadin-core", version: "2.0.0-alpha3"
             copyAll true
         }
@@ -50,7 +50,7 @@ gretty {
 
 dependencies {
     // Karibu-DSL dependency
-    compile 'com.github.vok.karibudsl:karibu-dsl-v10:0.2.12'
+    compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.13"
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
     // logging
