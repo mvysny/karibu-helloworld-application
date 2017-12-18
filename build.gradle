@@ -1,7 +1,7 @@
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.1.51"
-    id "com.github.ksoichiro.web.resource" version "1.7.3"
+    id "org.jetbrains.kotlin.jvm" version "1.2.10"
     id "org.akhikhl.gretty" version "2.0.0"
+    id "io.spring.dependency-management" version "1.0.4.RELEASE"
 }
 
 apply plugin: 'kotlin'
@@ -9,48 +9,33 @@ apply plugin: 'war'
 
 defaultTasks 'clean', 'build'
 
-def frontendWorkingDirectory = "src/main/webapp/frontend"
-
-clean.doFirst {
-    ['bower_components', 'build', 'node', 'node_modules', 'etc'].each {
-        delete frontendWorkingDirectory + '/' + it
-    }
-}
-
 repositories {
     mavenCentral()
     maven { url "https://repo.vaadin.com/nexus/content/repositories/flow" }
+    maven { url 'https://maven.vaadin.com/vaadin-prereleases' }
     maven { url "https://dl.bintray.com/mvysny/vaadin-on-kotlin" }
-}
-
-processResources.dependsOn webResourceCompile
-
-webResource {
-    base {
-        src "src/main/webapp"
-        dest frontendWorkingDirectory
-    }
-
-    lib {
-        dest "bower_components"
-    }
-
-    bower {
-        dependencies {
-            install name: "polymer", version: "2.1.1"
-            install name: "vaadin-core", version: "2.0.0-alpha3"
-            copyAll true
-        }
-    }
+    maven { url 'https://dl.bintray.com/webjars/maven' }
 }
 
 gretty {
     contextPath = ''
 }
 
+dependencyManagement {
+    imports { mavenBom "com.vaadin:vaadin-webjars-bom:1.0.0.alpha12" }
+    dependencies {
+        dependency "org.webjars.bower:vaadin-ordered-layout:1.0.0-alpha4"
+    }
+}
+
 dependencies {
     // Karibu-DSL dependency
     compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.14"
+
+    // Vaadin
+    compile "com.vaadin:vaadin:10.0.0.alpha8"
+    compile "org.webjars.bower:vaadin-valo-theme"
+    compile "org.webjars.bower:polymer"
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
     // logging
@@ -59,4 +44,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.25'
     // this will allow us to configure Vaadin to log to SLF4J
     compile 'org.slf4j:jul-to-slf4j:1.7.25'
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:1.2.10"
 }
+
