@@ -30,7 +30,7 @@ dependencyManagement {
 
 dependencies {
     // Karibu-DSL dependency
-    compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.14"
+    compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.15"
 
     // Vaadin
     compile "com.vaadin:vaadin:10.0.0.alpha8"
