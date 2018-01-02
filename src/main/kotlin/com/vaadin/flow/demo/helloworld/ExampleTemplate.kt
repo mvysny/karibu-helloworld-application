@@ -18,11 +18,11 @@ package com.vaadin.flow.demo.helloworld
 import com.github.vok.karibudsl.flow.VaadinDsl
 import com.github.vok.karibudsl.flow.init
 import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel
-import com.vaadin.flow.model.TemplateModel
-import com.vaadin.ui.Tag
-import com.vaadin.ui.common.HasComponents
-import com.vaadin.ui.common.HtmlImport
-import com.vaadin.ui.polymertemplate.PolymerTemplate
+import com.vaadin.flow.templatemodel.TemplateModel
+import com.vaadin.flow.component.Tag
+import com.vaadin.flow.component.HasComponents
+import com.vaadin.flow.component.dependency.HtmlImport
+import com.vaadin.flow.component.polymertemplate.PolymerTemplate
 
 /**
  * Simple template example.

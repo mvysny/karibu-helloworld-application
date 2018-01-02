@@ -12,6 +12,7 @@ defaultTasks 'clean', 'build'
 repositories {
     mavenCentral()
     maven { url "https://repo.vaadin.com/nexus/content/repositories/flow" }
+    maven { url 'https://maven.vaadin.com/vaadin-addons' }
     maven { url 'https://maven.vaadin.com/vaadin-prereleases' }
     maven { url "https://dl.bintray.com/mvysny/vaadin-on-kotlin" }
     maven { url 'https://dl.bintray.com/webjars/maven' }
@@ -22,18 +23,14 @@ gretty {
 }
 
 dependencyManagement {
-    imports { mavenBom "com.vaadin:vaadin-webjars-bom:1.0.0.alpha12" }
-    dependencies {
-        dependency "org.webjars.bower:vaadin-ordered-layout:1.0.0-alpha4"
-    }
+    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha11" }
 }
 
 dependencies {
     // Karibu-DSL dependency
-    compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.15"
+    compile "com.github.vok.karibudsl:karibu-dsl-v10:0.2.16"
 
     // Vaadin
-    compile "com.vaadin:vaadin:10.0.0.alpha8"
     compile "org.webjars.bower:vaadin-valo-theme"
     compile "org.webjars.bower:polymer"
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'

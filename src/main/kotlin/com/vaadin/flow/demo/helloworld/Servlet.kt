@@ -15,8 +15,8 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.vaadin.server.VaadinServlet
-import com.vaadin.server.VaadinServletConfiguration
+import com.vaadin.flow.server.VaadinServlet
+import com.vaadin.flow.server.VaadinServletConfiguration
 
 import javax.servlet.annotation.WebServlet
 
@@ -25,6 +25,6 @@ import javax.servlet.annotation.WebServlet
  *
  * It is not mandatory to have the Servlet, since Flow will automatically register a Servlet to any app with at least one `@Route` to server root context.
  */
-@WebServlet(urlPatterns = arrayOf("/*"), name = "UIServlet", asyncSupported = true)
+@WebServlet(urlPatterns = ["/*"], name = "UIServlet", asyncSupported = true)
 @VaadinServletConfiguration(usingNewRouting = true, productionMode = false)
 class Servlet : VaadinServlet()

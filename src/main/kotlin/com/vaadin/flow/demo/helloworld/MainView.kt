@@ -16,9 +16,9 @@
 package com.vaadin.flow.demo.helloworld
 
 import com.github.vok.karibudsl.flow.*
-import com.vaadin.router.Route
-import com.vaadin.ui.common.HtmlImport
-import com.vaadin.ui.layout.VerticalLayout
+import com.vaadin.flow.router.Route
+import com.vaadin.flow.component.dependency.HtmlImport
+import com.vaadin.flow.component.orderedlayout.VerticalLayout
 
 /**
  * The main view contains a button and a template element.
@@ -37,7 +37,6 @@ class MainView : VerticalLayout() {
         h2("The traditional Vaadin 8 hello-world in Vaadin 10")
         val name = textField("Your name:") {
             placeholder = "Please enter your name:"
-            addValueChangeListener {  }  // workaround for https://github.com/vaadin/vaadin-text-field-flow/issues/4
         }
         button("Click me") {
             onLeftClick {
