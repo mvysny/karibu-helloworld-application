@@ -16,7 +16,6 @@ To quickly start the app, make sure that you have Java 8 JDK installed. Then, ju
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
-./gradlew build
 ./gradlew appRun
 ```
 
