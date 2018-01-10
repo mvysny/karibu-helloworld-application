@@ -23,7 +23,7 @@ gretty {
 }
 
 dependencyManagement {
-    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha11" }
+    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha12" }
 }
 
 dependencies {

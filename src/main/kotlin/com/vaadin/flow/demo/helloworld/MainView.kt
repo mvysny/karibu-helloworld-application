@@ -19,14 +19,17 @@ import com.github.vok.karibudsl.flow.*
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.component.dependency.HtmlImport
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
+import com.vaadin.flow.component.page.BodySize
 
 /**
  * The main view contains a button and a template element.
  */
+@BodySize(width = "100vw", height = "100vh")
 @HtmlImport("frontend://styles.html")
 @Route("")
 class MainView : VerticalLayout() {
     init {
+        setSizeFull()
         h1("Welcome to Vaadin 10!")
         val template = exampleTemplate()
         button("Click me") {
