@@ -28,7 +28,7 @@ dependencyManagement {
 
 dependencies {
     // Karibu-DSL dependency
-    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.16") {
+    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.17") {
         exclude group: 'org.webjars.bower', module: 'vaadin-valo-theme'   // fixes https://github.com/mvysny/vaadin-on-kotlin/issues/8
     }
 
