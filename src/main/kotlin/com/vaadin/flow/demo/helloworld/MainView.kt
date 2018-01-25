@@ -18,8 +18,11 @@ package com.vaadin.flow.demo.helloworld
 import com.github.vok.karibudsl.flow.*
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.component.dependency.HtmlImport
+import com.vaadin.flow.component.dialog.Dialog
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
 import com.vaadin.flow.component.page.BodySize
+import com.vaadin.flow.theme.Theme
+import com.vaadin.flow.theme.lumo.Lumo
 
 /**
  * The main view contains a button and a template element.
@@ -27,6 +30,7 @@ import com.vaadin.flow.component.page.BodySize
 @BodySize(width = "100vw", height = "100vh")
 @HtmlImport("frontend://styles.html")
 @Route("")
+@Theme(Lumo::class)
 class MainView : VerticalLayout() {
     init {
         setSizeFull()
@@ -44,6 +48,27 @@ class MainView : VerticalLayout() {
         button("Click me") {
             onLeftClick {
                 this@MainView.label("Thanks ${name.value}, it works!")
+            }
+        }
+        button("Open dialog") {
+            onLeftClick {
+                MyDialog().open()
+            }
+        }
+    }
+}
+
+class MyDialog : Dialog() {
+    init {
+        addOpenedChangeListener({
+            if (!isOpened) {
+                element.removeFromParent();
+            }
+        })
+
+        button("Close") {
+            onLeftClick {
+                close()
             }
         }
     }
