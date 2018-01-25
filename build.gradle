@@ -1,5 +1,5 @@
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.2.20"
+    id "org.jetbrains.kotlin.jvm" version "1.2.21"
     id "org.akhikhl.gretty" version "2.0.0"
     id "io.spring.dependency-management" version "1.0.4.RELEASE"
 }
@@ -42,7 +42,7 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'org.slf4j:slf4j-api:1.7.25'
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.20"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.21"
 }
 
 compileKotlin {
