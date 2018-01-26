@@ -23,9 +23,6 @@ The app will be running on http://localhost:8080/
 
 This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-starter-flow) to Kotlin+Gradle.
 
-For a Flow application example, please see the Beverage Buddy App Starter for Flow instead, which is the `example-v10`
-app of the [Karibu-DSL](https://github.com/mvysny/karibu-dsl) project.
-
 # More Resources
 
 * The DSL technique is used to allow you to nest your components in a structured code. This is provided by the
