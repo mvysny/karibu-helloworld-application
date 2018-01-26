@@ -5,9 +5,7 @@
 This project can be used as a starting point to create your own Vaadin Flow application. It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
                                               
-Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl); for more information about the
-Karibu-DSL framework please see https://github.com/mvysny/karibu-dsl .
-For more information on Vaadin please see https://vaadin.com/docs/-/part/framework/tutorial.html
+Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [Vaadin](https://vaadin.com/flow) framework.
 
 # Getting Started
 
@@ -19,7 +17,7 @@ cd karibu10-helloworld-application
 ./gradlew appRun
 ```
 
-The app will be running on http://localhost:8080/
+The app will be running on [http://localhost:8080/](http://localhost:8080/).
 
 This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-starter-flow) to Kotlin+Gradle.
 
