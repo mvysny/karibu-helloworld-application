@@ -45,7 +45,7 @@ class MainView : VerticalLayout() {
         val name = textField("Your name:") {
             placeholder = "Please enter your name:"
         }
-        button("Click me") {
+        button("Greet") {
             onLeftClick {
                 this@MainView.label("Thanks ${name.value}, it works!")
             }

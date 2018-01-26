@@ -27,7 +27,7 @@ This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-sta
 
 * The DSL technique is used to allow you to nest your components in a structured code. This is provided by the
   Karibu-DSL library; please visit the [Karibu-DSL home page](https://github.com/mvysny/karibu-dsl) for more information.
-* The serverless testing is demonstrated in the [MyUITest.kt](src/test/kotlin/org/test/MyUITest.kt) file.
+* The serverless testing is demonstrated in the [MainViewTest.kt](src/test/kotlin/com/vaadin/flow/demo/helloworld/MainViewTest.kt) file.
   Please read [Serverless Web Testing](http://mavi.logdown.com/posts/3147601) for more information.
 * For more complex example which includes multiple pages, please see the [Karibu-DSL example-v10 app](https://github.com/mvysny/karibu-dsl#quickstart-vaadin-10-flow).
   It is a port of the [Beverage Buddy App Starter](https://github.com/vaadin/beverage-starter-flow) to Kotlin + Karibu DSL.
