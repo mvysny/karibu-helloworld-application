@@ -35,16 +35,16 @@ class ExampleTemplate : PolymerTemplate<ExampleModel>() {
      * Template model which defines the single "value" property.
      */
     interface ExampleModel : TemplateModel {
-        fun setValue(value: String)
+        var value: String
     }
+
+    var value: String
+    get() = model.value
+    set(value) { model.value = value }
 
     init {
         // Set the initial value to the "value" property.
-        setValue("Not clicked")
-    }
-
-    fun setValue(value: String) {
-        model.setValue(value)
+        value = "Not clicked"
     }
 }
 

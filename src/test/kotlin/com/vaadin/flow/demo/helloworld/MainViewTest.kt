@@ -19,8 +19,7 @@ class MainViewTest {
 
     @Test
     fun testGreeting() {
-        _get<TextField> { caption = "Your name:" } .value = "Duke Leto Atreides"
-        _get<Button> { caption = "Greet" } ._click()
-        expect("Thanks Duke Leto Atreides, it works!") { _get<Label>().text }
+        _get<Button> { caption = "Click me" } ._click()
+        expect("Clicked!") { _get<ExampleTemplate>().value }
     }
 }

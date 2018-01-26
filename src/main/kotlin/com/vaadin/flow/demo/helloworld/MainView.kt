@@ -32,44 +32,13 @@ import com.vaadin.flow.theme.lumo.Lumo
 @Route("")
 @Theme(Lumo::class)
 class MainView : VerticalLayout() {
+    private lateinit var template: ExampleTemplate
     init {
-        setSizeFull()
-        h1("Welcome to Vaadin 10!")
-        val template = exampleTemplate()
         button("Click me") {
             onLeftClick {
-                template.setValue("Clicked!")
+                template.value = "Clicked!"
             }
         }
-        h2("The traditional Vaadin 8 hello-world in Vaadin 10")
-        val name = textField("Your name:") {
-            placeholder = "Please enter your name:"
-        }
-        button("Greet") {
-            onLeftClick {
-                this@MainView.label("Thanks ${name.value}, it works!")
-            }
-        }
-        button("Open dialog") {
-            onLeftClick {
-                MyDialog().open()
-            }
-        }
-    }
-}
-
-class MyDialog : Dialog() {
-    init {
-        addOpenedChangeListener({
-            if (!isOpened) {
-                element.removeFromParent();
-            }
-        })
-
-        button("Close") {
-            onLeftClick {
-                close()
-            }
-        }
+        template = exampleTemplate()
     }
 }
