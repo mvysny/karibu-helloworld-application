@@ -23,12 +23,12 @@ gretty {
 }
 
 dependencyManagement {
-    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha14" }
+    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha15" }
 }
 
 dependencies {
     // Karibu-DSL dependency
-    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.20")
+    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.21")
 
     // Vaadin
     compile "com.vaadin:vaadin-lumo-theme"
@@ -43,7 +43,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.21"
 
     // test support
-    testCompile "com.github.vok.karibudsl:karibu-testing-v10:0.2.20"
+    testCompile "com.github.vok.karibudsl:karibu-testing-v10:0.2.21"
     testCompile "junit:junit:4.12"
     testCompile "org.jetbrains.kotlin:kotlin-test:1.2.21"
 }
