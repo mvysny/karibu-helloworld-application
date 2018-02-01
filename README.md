@@ -17,6 +17,8 @@ cd karibu10-helloworld-application
 ./gradlew appRun
 ```
 
+**Note**: Java 9 is currently unsupported: `./gradlew appRun` will fail to run. See Issue #1 for more details. For now please use Java 8 JDK.
+
 The app will be running on [http://localhost:8080/](http://localhost:8080/).
 
 This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-starter-flow) to Kotlin+Gradle.
