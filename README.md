@@ -7,6 +7,8 @@ Just clone this repo and start experimenting! Import it to the IDE of your choic
                                               
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [Vaadin](https://vaadin.com/flow) framework.
 
+Online [Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
+
 # Getting Started
 
 To quickly start the app, make sure that you have Java 8 JDK installed. Then, just type this into your terminal:
