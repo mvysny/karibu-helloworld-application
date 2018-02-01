@@ -47,6 +47,9 @@ dependencies {
     testCompile "com.github.vok.karibudsl:karibu-testing-v10:0.2.21"
     testCompile "junit:junit:4.12"
     testCompile "org.jetbrains.kotlin:kotlin-test:1.2.21"
+
+    // heroku app runner
+    providedRuntime 'com.github.jsimone:webapp-runner:8.5.11.3'
 }
 
 compileKotlin {
@@ -62,4 +65,12 @@ compileTestKotlin {
 
 // Heroku
 task stage(dependsOn: ['build'])
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.providedRuntime) {
+        include "webapp-runner*"
+    }
+}
+
+stage.dependsOn(copyToLib)
 
