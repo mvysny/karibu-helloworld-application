@@ -21,6 +21,7 @@ import com.vaadin.flow.component.dependency.HtmlImport
 import com.vaadin.flow.component.dialog.Dialog
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
 import com.vaadin.flow.component.page.BodySize
+import com.vaadin.flow.component.page.Viewport
 import com.vaadin.flow.theme.Theme
 import com.vaadin.flow.theme.lumo.Lumo
 
@@ -30,6 +31,7 @@ import com.vaadin.flow.theme.lumo.Lumo
 @BodySize(width = "100vw", height = "100vh")
 @HtmlImport("frontend://styles.html")
 @Route("")
+@Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 @Theme(Lumo::class)
 class MainView : VerticalLayout() {
     private lateinit var template: ExampleTemplate
