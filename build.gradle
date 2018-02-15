@@ -14,7 +14,7 @@ repositories {
     maven { url "https://repo.vaadin.com/nexus/content/repositories/flow" }
     maven { url 'https://maven.vaadin.com/vaadin-addons' }
     maven { url 'https://maven.vaadin.com/vaadin-prereleases' }
-    maven { url "https://dl.bintray.com/mvysny/vaadin-on-kotlin" }
+    maven { url "https://dl.bintray.com/mvysny/github" }
     maven { url 'https://dl.bintray.com/webjars/maven' }
 }
 
@@ -23,16 +23,15 @@ gretty {
 }
 
 dependencyManagement {
-    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha15" }
+    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha18" }
 }
 
 dependencies {
     // Karibu-DSL dependency
-    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.21")
+    compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.22")
 
     // Vaadin
     compile "com.vaadin:vaadin-lumo-theme"
-    compile "org.webjars.bower:polymer"
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
     // logging
@@ -43,7 +42,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.21"
 
     // test support
-    testCompile "com.github.vok.karibudsl:karibu-testing-v10:0.2.21"
+    testCompile "com.github.vok.karibudsl:karibu-testing-v10:0.2.22"
     testCompile "junit:junit:4.12"
     testCompile "org.jetbrains.kotlin:kotlin-test:1.2.21"
 
@@ -72,4 +71,3 @@ task copyToLib(type: Copy) {
 }
 
 stage.dependsOn(copyToLib)
-
