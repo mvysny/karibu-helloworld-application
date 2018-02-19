@@ -23,7 +23,7 @@ gretty {
 }
 
 dependencyManagement {
-    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha18" }
+    imports { mavenBom "com.vaadin:vaadin-bom:10.0.0.alpha19" }
 }
 
 test {
@@ -31,11 +31,8 @@ test {
 }
 
 dependencies {
-    // Karibu-DSL dependency
+    // Karibu-DSL dependency, includes Vaadin
     compile("com.github.vok.karibudsl:karibu-dsl-v10:0.2.22")
-
-    // Vaadin
-    compile "com.vaadin:vaadin-lumo-theme"
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 
     // logging
