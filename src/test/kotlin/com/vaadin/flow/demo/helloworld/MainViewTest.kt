@@ -5,6 +5,7 @@ import com.github.karibu.testing._click
 import com.github.karibu.testing._get
 import com.github.karibu.testing.autoDiscoverViews
 import com.github.mvysny.dynatest.DynaTest
+import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.button.Button
 import kotlin.test.expect
 
@@ -16,6 +17,11 @@ class MainViewTest: DynaTest({
 
     test("test greeting") {
         // MockVaadin.setup() discovered all @Routes and prepared the UI for us; we can now read components from it.
+        // the root route should be initialized; let's check whether it is indeed set in the UI
+        val main = UI.getCurrent().children.findFirst().get() as MainView
+        // it should have two children: a button and a template
+        expect(2) { main.children.count() }
+
         // simulate a button click as if clicked by the user
         _get<Button> { caption = "Click me" } ._click()
 
