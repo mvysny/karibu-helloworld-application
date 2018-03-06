@@ -10,7 +10,7 @@ import com.vaadin.flow.component.button.Button
 import kotlin.test.expect
 
 /**
- * Tests the UI. Uses the Serverless testing approach as provided by the [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
+ * Tests the UI. Uses the Browserless testing approach as provided by the [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
  */
 class MainViewTest: DynaTest({
     beforeEach { MockVaadin.setup(autoDiscoverViews("com.vaadin.flow.demo")) }
