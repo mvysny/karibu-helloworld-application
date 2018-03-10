@@ -1,6 +1,6 @@
 buildscript {
-    ext.karibudsl_version = '0.3.4'
-    ext.vaadin10_version = '10.0.0.beta1'
+    ext.karibudsl_version = '0.3.6'
+    ext.vaadin10_version = '10.0.0.beta2'
 }
 
 plugins {
