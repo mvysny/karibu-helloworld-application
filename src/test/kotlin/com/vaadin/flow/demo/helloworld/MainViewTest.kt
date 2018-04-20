@@ -1,9 +1,6 @@
 package com.vaadin.flow.demo.helloworld
 
-import com.github.karibu.testing.MockVaadin
-import com.github.karibu.testing._click
-import com.github.karibu.testing._get
-import com.github.karibu.testing.autoDiscoverViews
+import com.github.karibu.testing.*
 import com.github.mvysny.dynatest.DynaTest
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.button.Button
@@ -13,7 +10,7 @@ import kotlin.test.expect
  * Tests the UI. Uses the Browserless testing approach as provided by the [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
  */
 class MainViewTest: DynaTest({
-    beforeEach { MockVaadin.setup(autoDiscoverViews("com.vaadin.flow.demo")) }
+    beforeEach { MockVaadin.setup(Routes().autoDiscoverViews("com.vaadin.flow.demo")) }
 
     test("test greeting") {
         // MockVaadin.setup() discovered all @Routes and prepared the UI for us; we can now read components from it.
