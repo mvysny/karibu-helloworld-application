@@ -12,15 +12,13 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [
 
 # Getting Started
 
-To quickly start the app, make sure that you have Java 8 JDK installed. Then, just type this into your terminal:
+To quickly start the app, make sure that you have Java 8 (or higher) JDK installed. Then, just type this into your terminal:
 
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
 ./gradlew appRun
 ```
-
-**Note**: Java 9 is currently unsupported: `./gradlew appRun` will fail to run. See [issue #1](https://github.com/mvysny/karibu10-helloworld-application/issues/1) for more details. For now please use Java 8 JDK.
 
 The app will be running on [http://localhost:8080/](http://localhost:8080/).
 
