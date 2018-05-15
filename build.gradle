@@ -17,11 +17,9 @@ defaultTasks 'clean', 'build'
 repositories {
     mavenCentral()
     jcenter()  // because of Gretty
-    maven { url "https://repo.vaadin.com/nexus/content/repositories/flow" }
     maven { url 'https://maven.vaadin.com/vaadin-addons' }
     maven { url 'https://maven.vaadin.com/vaadin-prereleases' }
     maven { url "https://dl.bintray.com/mvysny/github" }
-    maven { url 'https://dl.bintray.com/webjars/maven' }
 }
 
 gretty {
