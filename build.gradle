@@ -48,7 +48,7 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'org.slf4j:slf4j-api:1.7.25'
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.60"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     // test support
     testCompile "com.github.kaributesting:karibu-testing-v10:0.4.14"
