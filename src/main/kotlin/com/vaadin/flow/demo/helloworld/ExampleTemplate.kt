@@ -48,5 +48,6 @@ class ExampleTemplate : PolymerTemplate<ExampleModel>() {
     }
 }
 
+@VaadinDsl
 fun (@VaadinDsl HasComponents).exampleTemplate(block: (@VaadinDsl ExampleTemplate).() -> Unit = {})
         = init(ExampleTemplate(), block)

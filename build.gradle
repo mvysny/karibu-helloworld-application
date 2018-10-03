@@ -1,5 +1,5 @@
 buildscript {
-    ext.karibudsl_version = '0.4.9'
+    ext.karibudsl_version = '0.4.10'
     ext.vaadin10_version = '11.0.0'
 }
 
