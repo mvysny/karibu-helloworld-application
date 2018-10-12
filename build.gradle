@@ -1,6 +1,6 @@
 buildscript {
     ext.karibudsl_version = '0.4.10'
-    ext.vaadin10_version = '11.0.0'
+    ext.vaadin10_version = '11.0.1'
 }
 
 plugins {
@@ -51,7 +51,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     // test support
-    testCompile "com.github.kaributesting:karibu-testing-v10:0.4.16"
+    testCompile "com.github.kaributesting:karibu-testing-v10:0.4.17"
     testCompile "com.github.mvysny.dynatest:dynatest:0.9"
 
     // heroku app runner
