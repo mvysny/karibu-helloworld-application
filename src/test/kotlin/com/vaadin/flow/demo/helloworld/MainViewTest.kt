@@ -11,6 +11,7 @@ import kotlin.test.expect
  */
 class MainViewTest: DynaTest({
     beforeEach { MockVaadin.setup(Routes().autoDiscoverViews("com.vaadin.flow.demo")) }
+    afterEach { MockVaadin.tearDown() }
 
     test("test greeting") {
         // MockVaadin.setup() discovered all @Routes and prepared the UI for us; we can now read components from it.
