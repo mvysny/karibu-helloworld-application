@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val karibudsl_version = "0.4.12"
+val karibudsl_version = "0.5.0"
 val vaadin10_version = "11.0.1"
 
 plugins {
@@ -39,7 +39,7 @@ val staging by configurations.creating
 
 dependencies {
     // Karibu-DSL dependency, includes Vaadin
-    compile("com.github.vok.karibudsl:karibu-dsl-v10:$karibudsl_version")
+    compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging

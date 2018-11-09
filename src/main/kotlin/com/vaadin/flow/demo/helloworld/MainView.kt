@@ -15,7 +15,7 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.github.vok.karibudsl.flow.*
+import com.github.mvysny.karibudsl.v10.*
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.component.dependency.HtmlImport
 import com.vaadin.flow.component.dialog.Dialog

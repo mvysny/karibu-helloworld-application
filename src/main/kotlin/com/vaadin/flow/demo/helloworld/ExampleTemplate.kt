@@ -15,8 +15,8 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.github.vok.karibudsl.flow.VaadinDsl
-import com.github.vok.karibudsl.flow.init
+import com.github.mvysny.karibudsl.v10.VaadinDsl
+import com.github.mvysny.karibudsl.v10.init
 import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel
 import com.vaadin.flow.templatemodel.TemplateModel
 import com.vaadin.flow.component.Tag
