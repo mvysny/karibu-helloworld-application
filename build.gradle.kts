@@ -7,7 +7,6 @@ val vaadin10_version = "11.0.2"
 plugins {
     kotlin("jvm") version "1.3.0"
     id("org.gretty") version "2.2.0"
-    id("io.spring.dependency-management") version "1.0.6.RELEASE"  // remove when https://github.com/gradle/gradle/issues/4417 is fixed
     war
 }
 
@@ -22,10 +21,6 @@ gretty {
     servletContainer = "jetty9.4"
 }
 
-dependencyManagement {
-    imports { mavenBom("com.vaadin:vaadin-bom:$vaadin10_version") }
-}
-
 tasks.withType<Test> {
     useJUnitPlatform()
     testLogging {
@@ -37,6 +32,8 @@ tasks.withType<Test> {
 val staging by configurations.creating
 
 dependencies {
+    compile(enforcedPlatform("com.vaadin:vaadin-bom:$vaadin10_version"))
+
     // Karibu-DSL dependency, includes Vaadin
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
