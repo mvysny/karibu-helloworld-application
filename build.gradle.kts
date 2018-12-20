@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val karibudsl_version = "0.5.1"
+val karibudsl_version = "0.5.2"
 val vaadin10_version = "12.0.3"
 
 plugins {
@@ -46,7 +46,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test support
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.0.3")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.0.4")
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.13")
 
     // heroku app runner
