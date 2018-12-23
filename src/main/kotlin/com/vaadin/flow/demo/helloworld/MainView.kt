@@ -18,8 +18,6 @@ package com.vaadin.flow.demo.helloworld
 import com.github.mvysny.karibudsl.v10.*
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.component.dependency.HtmlImport
-import com.vaadin.flow.component.dialog.Dialog
-import com.vaadin.flow.component.orderedlayout.VerticalLayout
 import com.vaadin.flow.component.page.BodySize
 import com.vaadin.flow.component.page.Viewport
 import com.vaadin.flow.theme.Theme
@@ -33,14 +31,16 @@ import com.vaadin.flow.theme.lumo.Lumo
 @Route("")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 @Theme(Lumo::class)
-class MainView : VerticalLayout() {
+class MainView : KComposite() {
     private lateinit var template: ExampleTemplate
-    init {
-        button("Click me") {
-            onLeftClick {
-                template.value = "Clicked!"
+    private val root = ui {
+        verticalLayout {
+            button("Click me") {
+                onLeftClick {
+                    template.value = "Clicked!"
+                }
             }
+            template = exampleTemplate()
         }
-        template = exampleTemplate()
     }
 }

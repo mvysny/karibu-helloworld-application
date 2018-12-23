@@ -17,8 +17,8 @@ class MainViewTest: DynaTest({
         // MockVaadin.setup() discovered all @Routes and prepared the UI for us; we can now read components from it.
         // the root route should be initialized; let's check whether it is indeed set in the UI
         val main = UI.getCurrent().children.findFirst().get() as MainView
-        // it should have two children: a button and a template
-        expect(2) { main.children.count() }
+
+        // however this kind of lookups are pretty fragile. Let's use the _get() function instead.
 
         // simulate a button click as if clicked by the user
         _get<Button> { caption = "Click me" } ._click()
