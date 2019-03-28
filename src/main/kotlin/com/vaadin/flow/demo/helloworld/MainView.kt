@@ -41,6 +41,7 @@ class MainView : KComposite() {
                 }
             }
             template = exampleTemplate()
+            myTestComponent("Mike")
         }
     }
 }
