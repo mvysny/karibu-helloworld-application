@@ -51,7 +51,7 @@ dependencies {
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
 
     // heroku app runner
-    staging("com.github.jsimone:webapp-runner:9.0.16.0")
+    staging("com.github.jsimone:webapp-runner-main:9.0.16.0")
 }
 
 tasks.withType<KotlinCompile> {
