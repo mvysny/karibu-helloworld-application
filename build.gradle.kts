@@ -6,8 +6,14 @@ val vaadin10_version = "14.0.0.beta1"
 
 plugins {
     kotlin("jvm") version "1.3.31"
-    id("org.gretty") version "2.2.0"
+    id("org.gretty") version "2.3.1"
     war
+    id("com.devsoap.vaadin-flow") version "1.1.2"
+}
+
+vaadin {
+    version = "14.0.0.beta1"
+    setUnsupportedVersion(true)
 }
 
 defaultTasks("clean", "build")
