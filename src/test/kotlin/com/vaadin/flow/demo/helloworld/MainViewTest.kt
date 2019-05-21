@@ -4,7 +4,6 @@ import com.github.mvysny.kaributesting.v10.*
 import com.github.mvysny.dynatest.DynaTest
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.button.Button
-import kotlin.test.expect
 
 /**
  * Tests the UI. Uses the Browserless testing approach as provided by the [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
@@ -23,7 +22,7 @@ class MainViewTest: DynaTest({
         // simulate a button click as if clicked by the user
         _get<Button> { caption = "Click me" } ._click()
 
-        // look up the Example Template and assert on its value
-        expect("Clicked!") { _get<ExampleTemplate>().value }
+        // look up the notification and assert on its value
+        expectNotifications("Clicked!")
     }
 })
