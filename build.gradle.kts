@@ -4,14 +4,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val karibudsl_version = "0.6.3"
 
 plugins {
-    kotlin("jvm") version "1.3.31"
+    kotlin("jvm") version "1.3.40"
     id("org.gretty") version "2.3.1"
     war
     id("com.devsoap.vaadin-flow") version "1.2"
 }
 
 vaadin {
-    version = "14.0.0.beta3"
+    version = "14.0.0.rc1"
 }
 
 defaultTasks("clean", "build")
