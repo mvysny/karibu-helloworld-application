@@ -11,7 +11,7 @@ plugins {
 }
 
 vaadin {
-    version = "14.0.0.rc1"
+    version = "14.0.0.rc3"
 }
 
 defaultTasks("clean", "build")
@@ -53,7 +53,7 @@ dependencies {
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
 
     // heroku app runner
-    staging("com.github.jsimone:webapp-runner-main:9.0.17.0")
+    staging("com.github.jsimone:webapp-runner-main:9.0.20.1")
 }
 
 tasks.withType<KotlinCompile> {
