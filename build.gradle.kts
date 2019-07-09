@@ -4,7 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val karibudsl_version = "0.6.3"
 
 plugins {
-    kotlin("jvm") version "1.3.40"
+    kotlin("jvm") version "1.3.41"
     id("org.gretty") version "2.3.1"
     war
     id("com.devsoap.vaadin-flow") version "1.2"
