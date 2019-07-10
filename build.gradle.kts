@@ -1,7 +1,7 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val karibudsl_version = "0.6.3"
+val karibudsl_version = "0.7.0"
 
 plugins {
     kotlin("jvm") version "1.3.41"
@@ -39,6 +39,7 @@ val staging by configurations.creating
 dependencies {
     // Karibu-DSL dependency, includes Vaadin
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
+    compile("com.vaadin:vaadin-core:${vaadin.version}")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
@@ -49,7 +50,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test support
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.6")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.8")
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
 
     // heroku app runner
