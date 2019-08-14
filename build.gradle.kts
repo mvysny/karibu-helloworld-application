@@ -11,7 +11,7 @@ plugins {
 }
 
 vaadin {
-    version = "14.0.0.rc7"
+    version = "14.0.0"
 }
 
 defaultTasks("clean", "build")
@@ -50,7 +50,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test support
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.8")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.9")
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
 
     // heroku app runner
