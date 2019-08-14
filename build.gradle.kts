@@ -39,6 +39,7 @@ val staging by configurations.creating
 dependencies {
     // Karibu-DSL dependency, includes Vaadin
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
+    compile("com.vaadin:flow-server-compatibility-mode:2.0.7")
     compile("com.vaadin:vaadin-core:${vaadin.version}")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
