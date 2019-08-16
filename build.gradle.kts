@@ -37,10 +37,12 @@ tasks.withType<Test> {
 val staging by configurations.creating
 
 dependencies {
-    // Karibu-DSL dependency, includes Vaadin
+    // Karibu-DSL dependency
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
-    compile("com.vaadin:flow-server-compatibility-mode:2.0.7")
+
+    // Vaadin 14
     compile("com.vaadin:vaadin-core:${vaadin.version}")
+    compile("com.vaadin:flow-server-compatibility-mode:2.0.7")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
