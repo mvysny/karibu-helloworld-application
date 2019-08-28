@@ -46,9 +46,8 @@ dependencies {
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
-    // currently we are logging through the SLF4J API to LogBack. See src/main/resources/logback.xml file for the logger configuration
-    compile("ch.qos.logback:logback-classic:1.2.3")
-    compile("org.slf4j:slf4j-api:1.7.25")
+    // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
+    compile("org.slf4j:slf4j-simple:1.7.25")
 
     compile(kotlin("stdlib-jdk8"))
 
