@@ -11,7 +11,7 @@ plugins {
 }
 
 vaadin {
-    version = "14.0.2"
+    version = "14.0.3"
 }
 
 defaultTasks("clean", "build")
@@ -42,7 +42,7 @@ dependencies {
 
     // Vaadin 14
     compile("com.vaadin:vaadin-core:${vaadin.version}")
-    compile("com.vaadin:flow-server-compatibility-mode:2.0.8")
+    compile("com.vaadin:flow-server-compatibility-mode:2.0.10")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
