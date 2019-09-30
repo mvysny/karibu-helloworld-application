@@ -11,7 +11,7 @@ plugins {
 }
 
 vaadin {
-    version = "14.0.6"
+    version = "14.0.7"
 }
 
 defaultTasks("clean", "build")
