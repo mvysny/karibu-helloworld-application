@@ -47,7 +47,7 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    compile("org.slf4j:slf4j-simple:1.7.25")
+    compile("org.slf4j:slf4j-simple:1.7.28")
 
     compile(kotlin("stdlib-jdk8"))
 
