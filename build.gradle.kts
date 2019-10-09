@@ -11,14 +11,13 @@ plugins {
 }
 
 vaadin {
-    version = "14.0.7"
+    version = "14.0.8"
 }
 
 defaultTasks("clean", "build")
 
 repositories {
     jcenter()
-    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases/") }
 }
 
 gretty {
