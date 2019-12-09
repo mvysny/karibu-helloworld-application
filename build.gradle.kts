@@ -4,14 +4,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val karibudsl_version = "0.7.1"
 
 plugins {
-    kotlin("jvm") version "1.3.60"
+    kotlin("jvm") version "1.3.61"
     id("org.gretty") version "2.3.1"
     war
     id("com.devsoap.vaadin-flow") version "1.2"
 }
 
 vaadin {
-    version = "14.0.13"
+    version = "14.1.0"
 }
 
 defaultTasks("clean", "build")
@@ -41,7 +41,7 @@ dependencies {
 
     // Vaadin 14
     compile("com.vaadin:vaadin-core:${vaadin.version}")
-    compile("com.vaadin:flow-server-compatibility-mode:2.0.18")
+    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
@@ -51,7 +51,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
 
     // test support
-    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.16")
+    testCompile("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.17")
     testCompile("com.github.mvysny.dynatest:dynatest-engine:0.15")
 
     // heroku app runner
