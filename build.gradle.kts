@@ -2,16 +2,12 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val karibudsl_version = "0.7.3"
+val vaadin_version = "14.1.2"
 
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.gretty") version "2.3.1"
     war
-    id("com.devsoap.vaadin-flow") version "1.2"
-}
-
-vaadin {
-    version = "14.1.2"
 }
 
 defaultTasks("clean", "build")
@@ -40,7 +36,7 @@ dependencies {
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
 
     // Vaadin 14
-    compile("com.vaadin:vaadin-core:${vaadin.version}")
+    compile("com.vaadin:vaadin-core:${vaadin_version}")
     compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
