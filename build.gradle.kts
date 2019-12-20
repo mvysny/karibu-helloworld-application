@@ -21,7 +21,9 @@ apply(plugin = "com.vaadin")
 
 configure<com.vaadin.gradle.extensions.VaadinPluginExtension> {
     version = "14.1.2"
-    autoconfigure()
+    // won't remove webpack things
+//     autoconfigure()
+    bom()
 }
 
 val karibudsl_version = "0.7.3"
@@ -60,9 +62,15 @@ dependencies {
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
 
     // Vaadin 14
-//    compile("com.vaadin:vaadin-core:${vaadin_version}")
+    compile("com.vaadin:vaadin-core:${vaadin_version}") {
+        // Webjars are only needed when running in Vaadin 13 compatibility mode
+        listOf("com.vaadin.webjar", "org.webjars.bowergithub.insites",
+                "org.webjars.bowergithub.polymer", "org.webjars.bowergithub.polymerelements",
+                "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents")
+                .forEach { exclude(group = it) }
+    }
 //    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
-//    providedCompile("javax.servlet:javax.servlet-api:3.1.0")
+    providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration

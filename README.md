@@ -33,9 +33,9 @@ option for a real development.
 
 ## Supported Modes
 
-Currently the app runs in Vaadin 14 Compatibility mode (the Bower + Polymer 2 + WebJars mode).
-Preliminary support for full Vaadin 14 mode (the npm + Polymer 3 + WebPack mode) is brewing in the
-[vaadin14-npm](../../tree/vaadin14-npm) branch.
+Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
+
+* Currently by default builds WAR in production mode, but that will change.
 
 # Workflow
 
