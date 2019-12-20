@@ -1,6 +1,26 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
+    }
+    dependencies {
+        classpath("com.vaadin:vaadin-gradle-plugin:0.1.0")
+        classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
+        classpath("io.github.classgraph:classgraph:4.8.49")
+        classpath("gradle.plugin.org.gretty:gretty:3.0.1")
+    }
+}
+
+apply(plugin = "com.vaadin")
+
+configure<com.vaadin.gradle.extensions.VaadinPluginExtension> {
+    version = "14.1.2"
+    autoconfigure()
+}
+
 val karibudsl_version = "0.7.3"
 val vaadin_version = "14.1.2"
 
@@ -14,6 +34,7 @@ defaultTasks("clean", "build")
 
 repositories {
     jcenter()
+    maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
 }
 
 gretty {
@@ -36,9 +57,9 @@ dependencies {
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
 
     // Vaadin 14
-    compile("com.vaadin:vaadin-core:${vaadin_version}")
-    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
-    providedCompile("javax.servlet:javax.servlet-api:3.1.0")
+//    compile("com.vaadin:vaadin-core:${vaadin_version}")
+//    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
+//    providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
