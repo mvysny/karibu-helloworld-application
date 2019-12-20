@@ -31,7 +31,7 @@ val vaadin_version = "14.1.2"
 
 plugins {
     kotlin("jvm") version "1.3.61"
-    id("org.gretty") version "2.3.1"
+    id("org.gretty") version "3.0.1"
     war
 }
 
