@@ -1,6 +1,9 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+// modifications done according to the tutorial at
+// https://github.com/vaadin/vaadin-gradle-plugin
+
 buildscript {
     repositories {
         gradlePluginPortal()
