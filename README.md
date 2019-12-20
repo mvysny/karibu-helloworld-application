@@ -35,7 +35,10 @@ option for a real development.
 
 Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
 
-* Currently by default builds WAR in production mode, but that will change.
+Currently only the production mode is supported. The development mode is not supported;
+attempting to run this project in Intellij+Tomcat will throw an exception.
+A feature request has been opened at https://github.com/vaadin/vaadin-gradle-plugin/issues/12 ,
+please give it a thumbs up.
 
 # Workflow
 
