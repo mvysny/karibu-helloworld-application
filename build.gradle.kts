@@ -19,15 +19,15 @@ buildscript {
 
 apply(plugin = "com.vaadin")
 
+val karibudsl_version = "0.7.3"
+val vaadin_version = "14.1.3"
+
 configure<com.vaadin.gradle.extensions.VaadinPluginExtension> {
-    version = "14.1.2"
+    version = vaadin_version
     // won't remove webpack things
 //     autoconfigure()
     bom()
 }
-
-val karibudsl_version = "0.7.3"
-val vaadin_version = "14.1.2"
 
 plugins {
     kotlin("jvm") version "1.3.61"
