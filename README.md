@@ -19,6 +19,7 @@ To quickly start the app, make sure that you have Java 8 (or higher) JDK install
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
+git checkout vaadin14-plugin
 ./gradlew appRun
 ```
 
