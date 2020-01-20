@@ -20,7 +20,7 @@ buildscript {
 apply(plugin = "com.vaadin")
 
 val karibudsl_version = "0.7.4"
-val vaadin_version = "14.1.3"
+val vaadin_version = "14.1.5"
 
 configure<com.vaadin.gradle.extensions.VaadinPluginExtension> {
     version = vaadin_version
