@@ -10,23 +10,8 @@ buildscript {
         maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
     }
     dependencies {
-        classpath("com.vaadin:vaadin-gradle-plugin:0.1.0")
-        classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
-        classpath("io.github.classgraph:classgraph:4.8.49")
-        classpath("gradle.plugin.org.gretty:gretty:3.0.1")
+        classpath("com.vaadin:vaadin-gradle-plugin:0.2.0")
     }
-}
-
-apply(plugin = "com.vaadin")
-
-val karibudsl_version = "0.7.4"
-val vaadin_version = "14.1.5"
-
-configure<com.vaadin.gradle.extensions.VaadinPluginExtension> {
-    version = vaadin_version
-    // won't remove webpack things
-//     autoconfigure()
-    bom()
 }
 
 plugins {
@@ -35,7 +20,12 @@ plugins {
     war
 }
 
-defaultTasks("clean", "build")
+apply(plugin = "com.vaadin")
+
+val karibudsl_version = "0.7.4"
+val vaadin_version = "14.1.16"
+
+defaultTasks("clean", "vaadinBuildFrontend", "build")
 
 repositories {
     jcenter()
@@ -69,7 +59,6 @@ dependencies {
                 "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents")
                 .forEach { exclude(group = it) }
     }
-//    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
