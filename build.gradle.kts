@@ -1,8 +1,18 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val karibudsl_version = "0.7.4"
-val vaadin_version = "14.1.5"
+// modifications done according to the tutorial at
+// https://github.com/vaadin/vaadin-gradle-plugin
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
+    }
+    dependencies {
+        classpath("com.vaadin:vaadin-gradle-plugin:0.3.0")
+    }
+}
 
 plugins {
     kotlin("jvm") version "1.3.61"
@@ -10,10 +20,16 @@ plugins {
     war
 }
 
-defaultTasks("clean", "build")
+apply(plugin = "com.vaadin")
+
+val karibudsl_version = "0.7.4"
+val vaadin_version = "14.1.16"
+
+defaultTasks("clean", "vaadinBuildFrontend", "build")
 
 repositories {
     jcenter()
+    maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
 }
 
 gretty {
@@ -36,8 +52,13 @@ dependencies {
     compile("com.github.mvysny.karibudsl:karibu-dsl-v10:$karibudsl_version")
 
     // Vaadin 14
-    compile("com.vaadin:vaadin-core:${vaadin_version}")
-    compile("com.vaadin:flow-server-compatibility-mode:2.1.1")
+    compile("com.vaadin:vaadin-core:${vaadin_version}") {
+        // Webjars are only needed when running in Vaadin 13 compatibility mode
+        listOf("com.vaadin.webjar", "org.webjars.bowergithub.insites",
+                "org.webjars.bowergithub.polymer", "org.webjars.bowergithub.polymerelements",
+                "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents")
+                .forEach { exclude(group = it) }
+    }
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging

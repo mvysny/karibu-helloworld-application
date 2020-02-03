@@ -19,6 +19,7 @@ To quickly start the app, make sure that you have Java 8 (or higher) JDK install
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
+git checkout vaadin14-plugin
 ./gradlew appRun
 ```
 
@@ -33,9 +34,12 @@ option for a real development.
 
 ## Supported Modes
 
-Currently the app runs in Vaadin 14 Compatibility mode (the Bower + Polymer 2 + WebJars mode).
-Preliminary support for full Vaadin 14 mode (the npm + Polymer 3 + WebPack mode) is brewing in the
-[vaadin14-plugin](../../tree/vaadin14-plugin) branch.
+Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
+
+Currently only the production mode is supported. The development mode is not supported;
+attempting to run this project in Intellij+Tomcat will throw an exception.
+A feature request has been opened at https://github.com/vaadin/vaadin-gradle-plugin/issues/12 ,
+please give it a thumbs up.
 
 # Workflow
 
