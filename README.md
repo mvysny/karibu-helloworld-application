@@ -1,5 +1,5 @@
 [![Powered By Vaadin on Kotlin](http://vaadinonkotlin.eu/iconography/vok_badge.svg)](http://vaadinonkotlin.eu)
-[![Build Status](https://travis-ci.org/mvysny/karibu10-helloworld-application.svg?branch=master)](https://travis-ci.org/mvysny/karibu-helloworld-application)
+[![Build Status](https://travis-ci.org/mvysny/karibu10-helloworld-application.svg?branch=master)](https://travis-ci.org/mvysny/karibu10-helloworld-application)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=karibu10-helloworld-app&style=flat&svg=1)](https://karibu10-helloworld-app.herokuapp.com/)
 
 # Vaadin 14 Karibu-DSL Example App / Archetype
