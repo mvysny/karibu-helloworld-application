@@ -19,8 +19,7 @@ To quickly start the app, make sure that you have Java 8 (or higher) JDK install
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
-git checkout vaadin14-plugin
-./gradlew appRun
+./gradlew vaadinPrepareNode vaadinPrepareFrontend appRun
 ```
 
 The app will be running on [http://localhost:8080/](http://localhost:8080/).
@@ -36,14 +35,34 @@ option for a real development.
 
 Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
 
-Currently only the production mode is supported. The development mode is not supported;
-attempting to run this project in Intellij+Tomcat will throw an exception.
-A feature request has been opened at https://github.com/vaadin/vaadin-gradle-plugin/issues/12 ,
-please give it a thumbs up.
+Both the development and production modes are supported.
+To prepare for development mode, just run:
+
+```bash
+./gradlew clean vaadinPrepareFrontend
+```
+
+If you don't have node installed, you can use Vaadin plugin to download node.js for you:
+
+```bash
+./gradlew vaadinPrepareNode
+```
+
+To build in production mode, just run:
+
+```bash
+./gradlew clean vaadinBuildFrontend build
+```
+
+If you don't have node installed (e.g. in your CI environment), you can use Vaadin plugin to download node.js for you:
+
+```bash
+./gradlew clean vaadinPrepareNode vaadinBuildFrontend build
+```
 
 # Workflow
 
-To compile the entire project, run `./gradlew`.
+To compile the entire project in production mode, run `./gradlew`.
 
 To run the application, run `./gradlew appRun` and open [http://localhost:8080/](http://localhost:8080/) .
 
