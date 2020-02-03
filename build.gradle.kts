@@ -10,7 +10,7 @@ buildscript {
         maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
     }
     dependencies {
-        classpath("com.vaadin:vaadin-gradle-plugin:0.2.0")
+        classpath("com.vaadin:vaadin-gradle-plugin:0.3.0")
     }
 }
 
