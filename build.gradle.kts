@@ -1,26 +1,12 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-// modifications done according to the tutorial at
-// https://github.com/vaadin/vaadin-gradle-plugin
-
-buildscript {
-    repositories {
-        gradlePluginPortal()
-        maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
-    }
-    dependencies {
-        classpath("com.vaadin:vaadin-gradle-plugin:0.4.0")
-    }
-}
-
 plugins {
     kotlin("jvm") version "1.3.61"
     id("org.gretty") version "3.0.1"
     war
+    id("com.vaadin") version "0.5.0"
 }
-
-apply(plugin = "com.vaadin")
 
 val karibudsl_version = "0.7.5"
 val vaadin_version = "14.1.16"
