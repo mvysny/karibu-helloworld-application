@@ -22,7 +22,7 @@ plugins {
 
 apply(plugin = "com.vaadin")
 
-val karibudsl_version = "0.7.4"
+val karibudsl_version = "0.7.5"
 val vaadin_version = "14.1.16"
 
 defaultTasks("clean", "vaadinBuildFrontend", "build")
