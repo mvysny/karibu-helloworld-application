@@ -5,7 +5,7 @@ plugins {
     kotlin("jvm") version "1.3.61"
     id("org.gretty") version "3.0.1"
     war
-    id("com.vaadin") version "0.5.0"
+    id("com.vaadin") version "0.5.1"
 }
 
 val karibudsl_version = "0.7.5"
