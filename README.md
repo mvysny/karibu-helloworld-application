@@ -87,7 +87,7 @@ To run the application in development mode, run `./gradlew appRun` and open [htt
 
 To produce a deployable production-mode WAR:
 - run `./gradlew -Pvaadin.productionMode`
-- You will find the WAR file in `build/libs/karibu-helloworld-application.war`
+- You will find the WAR file in `build/libs/*.war`
 - To revert your environment back to development mode, just run `./gradlew` or `./gradlew vaadinPrepareFrontend`
   (omit the `-Pvaadin.productionMode`) switch.
 
