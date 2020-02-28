@@ -39,7 +39,8 @@ cd karibu10-helloworld-application
 ./gradlew appRun
 ```
 
-The app will be running on [http://localhost:8080/](http://localhost:8080/).
+Gradle will automatically download an embedded servlet container (Jetty) and will run your app in it. Your app will be running on
+[http://localhost:8080](http://localhost:8080).
 
 Since the build system is a Gradle file written in Kotlin, we suggest you
 use [Intellij IDEA](https://www.jetbrains.com/idea/download)
@@ -76,7 +77,7 @@ To build in production mode, just run:
 If you don't have node installed in your CI environment, you can use Vaadin plugin to download node.js for you beforehand:
 
 ```bash
-./gradlew clean vaadinPrepareNode vaadinBuildFrontend build
+./gradlew clean vaadinPrepareNode build -Pvaadin.productionMode
 ```
 
 # Workflow
