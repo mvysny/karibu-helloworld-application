@@ -14,19 +14,30 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [
 
 ## Getting Started
 
-To quickly start the app, make sure that you have Java 8 (or higher) JDK installed. Then, just type this into your terminal:
+To quickly start the app, make sure that you have Java 8 (or higher) JDK installed.
+Then, just type this into your terminal:
 
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
 cd karibu10-helloworld-application
-./gradlew vaadinPrepareNode vaadinPrepareFrontend appRun
+./gradlew appRun
 ```
 
 The app will be running on [http://localhost:8080/](http://localhost:8080/).
 
-Since the build system is a Gradle file written in Kotlin, we suggest you use [Intellij IDEA](https://www.jetbrains.com/idea/download)
+Warning: node.js is now also required to be installed. You can use this command to install
+a local copy of node.js quickly:
+```bash
+./gradlew vaadinPrepareNode
+```
+
+You only need to run this command once.
+
+Since the build system is a Gradle file written in Kotlin, we suggest you
+use [Intellij IDEA](https://www.jetbrains.com/idea/download)
 to edit the project files. The Community edition is enough to run the server
-via Gretty's `./gradlew appRun`. The Ultimate edition will allow you to run the project in Tomcat - this is the recommended
+via Gretty's `./gradlew appRun`. The Ultimate edition will allow you to run the
+project in Tomcat - this is the recommended
 option for a real development.
 
 > This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-starter-flow) to Kotlin+Gradle.
@@ -51,10 +62,10 @@ If you don't have node installed, you can use Vaadin plugin to download node.js 
 To build in production mode, just run:
 
 ```bash
-./gradlew clean vaadinBuildFrontend build
+./gradlew clean build -Pvaadin.productionMode
 ```
 
-If you don't have node installed (e.g. in your CI environment), you can use Vaadin plugin to download node.js for you:
+If you don't have node installed in your CI environment, you can use Vaadin plugin to download node.js for you beforehand:
 
 ```bash
 ./gradlew clean vaadinPrepareNode vaadinBuildFrontend build
@@ -67,9 +78,10 @@ To compile the entire project in production mode, run `./gradlew`.
 To run the application, run `./gradlew appRun` and open [http://localhost:8080/](http://localhost:8080/) .
 
 To produce a deployable production mode WAR see the [Vaadin Gradle Flow plugin Production Mode documentation](https://docs.devsoap.com/vaadin_flow_gradle_plugin_advanced/production_mode.html):
-- add `vaadin { productionMode = true }` to `build.gradle.kts`
-- run `./gradlew`
+- run `./gradlew -Pvaadin.productionMode`
 - You will find the WAR file in `build/libs/karibu-helloworld-application.war`
+- To revert your environment back to development mode, just run `./gradlew` or `./gradlew vaadinPrepareFrontend`
+  (omit the `-Pvaadin.productionMode`) switch.
 
 This will allow you to quickly start the example app and allow you to do some basic modifications.
 

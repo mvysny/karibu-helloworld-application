@@ -5,17 +5,16 @@ plugins {
     kotlin("jvm") version "1.3.61"
     id("org.gretty") version "3.0.1"
     war
-    id("com.vaadin") version "0.5.1"
+    id("com.vaadin") version "0.6.0"
 }
 
 val karibudsl_version = "0.7.5"
 val vaadin_version = "14.1.17"
 
-defaultTasks("clean", "vaadinBuildFrontend", "build")
+defaultTasks("clean", "build")
 
 repositories {
     jcenter()
-    maven { setUrl("https://repo.vaadin.com/nexus/content/repositories/vaadin-prereleases-201912/") }
 }
 
 gretty {
