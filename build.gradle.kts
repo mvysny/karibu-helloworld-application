@@ -73,6 +73,12 @@ tasks {
         }
     }
     val stage by registering {
-        dependsOn("vaadinPrepareNode", "vaadinBuildFrontend", "build", copyToLib)
+        dependsOn("vaadinPrepareNode", "build", copyToLib)
+    }
+}
+
+vaadin {
+    if (gradle.startParameter.taskNames.contains("stage")) {
+        productionMode = true
     }
 }
