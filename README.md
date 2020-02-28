@@ -12,10 +12,26 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [
 
 [Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
 
+# Preparing Environment
+
+The Vaadin 14 build requires node.js and npm. You can either use the Vaadin Gradle plugin to install it for
+you (the `vaadinPrepareNode` task, handy for the CI), or you can install it to your OS:
+
+* Windows: [node.js Download site](https://nodejs.org/en/download/) - use the .msi 64-bit installer
+* Linux: `sudo apt install npm`
+
+To make Vaadin Gradle plugin install node.js+npm for you, just run the following command
+in the project's sources (you only need to run this command once):
+
+```
+./gradlew vaadinPrepareNode
+```
+
+Also make sure that you have Java 8 (or higher) JDK installed.
+
 ## Getting Started
 
-To quickly start the app, make sure that you have Java 8 (or higher) JDK installed.
-Then, just type this into your terminal:
+To quickly start the app, just type this into your terminal:
 
 ```bash
 git clone https://github.com/mvysny/karibu10-helloworld-application
@@ -24,14 +40,6 @@ cd karibu10-helloworld-application
 ```
 
 The app will be running on [http://localhost:8080/](http://localhost:8080/).
-
-Warning: node.js is now also required to be installed. You can use this command to install
-a local copy of node.js quickly:
-```bash
-./gradlew vaadinPrepareNode
-```
-
-You only need to run this command once.
 
 Since the build system is a Gradle file written in Kotlin, we suggest you
 use [Intellij IDEA](https://www.jetbrains.com/idea/download)
@@ -46,7 +54,7 @@ option for a real development.
 
 Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
 
-Both the development and production modes are supported.
+Both the [development and production modes](https://vaadin.com/docs/v14/flow/production/tutorial-production-mode-basic.html) are supported.
 To prepare for development mode, just run:
 
 ```bash
@@ -73,11 +81,11 @@ If you don't have node installed in your CI environment, you can use Vaadin plug
 
 # Workflow
 
-To compile the entire project in production mode, run `./gradlew`.
+To compile the entire project in production mode, run `./gradlew -Pvaadin.productionMode`.
 
-To run the application, run `./gradlew appRun` and open [http://localhost:8080/](http://localhost:8080/) .
+To run the application in development mode, run `./gradlew appRun` and open [http://localhost:8080/](http://localhost:8080/).
 
-To produce a deployable production mode WAR see the [Vaadin Gradle Flow plugin Production Mode documentation](https://docs.devsoap.com/vaadin_flow_gradle_plugin_advanced/production_mode.html):
+To produce a deployable production-mode WAR:
 - run `./gradlew -Pvaadin.productionMode`
 - You will find the WAR file in `build/libs/karibu-helloworld-application.war`
 - To revert your environment back to development mode, just run `./gradlew` or `./gradlew vaadinPrepareFrontend`
