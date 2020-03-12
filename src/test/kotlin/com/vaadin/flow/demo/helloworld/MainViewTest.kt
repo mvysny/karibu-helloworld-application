@@ -4,25 +4,46 @@ import com.github.mvysny.kaributesting.v10.*
 import com.github.mvysny.dynatest.DynaTest
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.button.Button
+import com.vaadin.flow.component.textfield.TextField
 
 /**
  * Tests the UI. Uses the Browserless testing approach as provided by the [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
  */
 class MainViewTest: DynaTest({
-    beforeEach { MockVaadin.setup(Routes().autoDiscoverViews("com.vaadin.flow.demo")) }
+    lateinit var routes: Routes
+    beforeGroup {
+        // Discovering the routes just once per test run speeds up runtime of consecutive tests considerably.
+        // Discover the routes once and cache the result.
+        routes = Routes().autoDiscoverViews("com.vaadin.flow.demo")
+    }
+    beforeEach {
+        // MockVaadin.setup() registers all @Routes, prepares the UI for us and navigates to the root route.
+        MockVaadin.setup(routes)
+    }
     afterEach { MockVaadin.tearDown() }
 
-    test("test greeting") {
-        // MockVaadin.setup() discovered all @Routes and prepared the UI for us; we can now read components from it.
-        // the root route should be initialized; let's check whether it is indeed set in the UI
+    test("smoke test") {
+        // Smoke test is a quick test that at least basic stuff works.
+        // The analogy would be to turn on a device, then turn it off immediately without even checking that it works,
+        // and watch whether there is any smoke - if yes, the device might be burning from inside.
+
+        // The root route should be set directly in the UI; let's check whether it is so.
+        // This demoes the direct access to the UI and its children and grand-children,
+        // which encompasses all visible Vaadin components.
         val main = UI.getCurrent().children.findFirst().get() as MainView
 
-        // however this kind of lookups are pretty fragile. Let's use the _get() function instead.
+        // however this kind of lookups quickly get pretty complicated. Let's use the _get() function instead,
+        // which will walk the UI tree for us. See the next test for details.
+    }
+
+    test("test greeting") {
+        // simulate an user input
+        _get<TextField> { caption = "Your name" } ._value = "Martin"
 
         // simulate a button click as if clicked by the user
-        _get<Button> { caption = "Click me" } ._click()
+        _get<Button> { caption = "Say hello" } ._click()
 
         // look up the notification and assert on its value
-        expectNotifications("Clicked!")
+        expectNotifications("Hello, Martin")
     }
 })

@@ -15,25 +15,38 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.github.mvysny.karibudsl.v10.KComposite
-import com.github.mvysny.karibudsl.v10.button
-import com.github.mvysny.karibudsl.v10.onLeftClick
-import com.github.mvysny.karibudsl.v10.verticalLayout
+import com.github.mvysny.karibudsl.v10.*
+import com.vaadin.flow.component.Key
+import com.vaadin.flow.component.dependency.CssImport
 import com.vaadin.flow.component.notification.Notification
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.server.PWA
 
 /**
- * The main view contains a button and a template element.
+ * The main view contains a button and a click listener.
  */
 @Route("")
-@PWA(name = "Project Base for Vaadin Flow", shortName = "Project Base")
+@PWA(name = "Project Base for Vaadin", shortName = "Project Base")
+@CssImport.Container(value = [  // repeatable annotations are not supported by Kotlin, please vote for https://youtrack.jetbrains.com/issue/KT-12794
+    CssImport("./styles/shared-styles.css"),
+    CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+])
 class MainView : KComposite() {
     private val root = ui {
+        // The main view
         verticalLayout {
-            button("Click me") {
+            // Use custom CSS classes to apply styling. This is defined in shared-styles.css.
+            addClassName("centered-content")
+
+            // Use TextField for standard text input
+            val textField = textField("Your name")
+
+            // Button click listeners can be defined as lambda expressions
+            button("Say hello") {
+                setPrimary(); addClickShortcut(Key.ENTER)
+
                 onLeftClick {
-                    Notification.show("Clicked!")
+                    Notification.show("Hello, ${textField.value}")
                 }
             }
         }
