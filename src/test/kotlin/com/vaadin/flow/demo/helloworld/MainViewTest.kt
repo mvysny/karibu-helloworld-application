@@ -24,8 +24,10 @@ class MainViewTest: DynaTest({
 
     test("smoke test") {
         // Smoke test is a quick test that at least basic stuff works.
-        // The analogy would be to turn on a device, then turn it off immediately without even checking that it works,
-        // and watch whether there is any smoke - if yes, the device might be burning from inside.
+        // The analogy would be to turn on an electric device (e.g. a coffee maker)
+        // then turn it off immediately without even checking that it works,
+        // and watch whether there is any smoke. If yes, the coffee maker is
+        // probably burning from a short-circuit and any further tests are pointless.
 
         // The root route should be set directly in the UI; let's check whether it is so.
         // This demoes the direct access to the UI and its children and grand-children,
