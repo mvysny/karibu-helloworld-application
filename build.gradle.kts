@@ -9,7 +9,7 @@ plugins {
 }
 
 val karibudsl_version = "0.7.5"
-val vaadin_version = "14.1.18"
+val vaadin_version = "14.1.19"
 
 defaultTasks("clean", "build")
 
@@ -57,7 +57,7 @@ dependencies {
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.16")
 
     // heroku app runner
-    staging("com.github.jsimone:webapp-runner-main:9.0.27.1")
+    staging("com.heroku:webapp-runner-main:9.0.31.0")
 }
 
 tasks.withType<KotlinCompile> {
