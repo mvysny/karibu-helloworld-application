@@ -4,11 +4,11 @@
 
 # Vaadin 14 Karibu-DSL Example App / Archetype
 
-This project can be used as a starting point to create your own Vaadin 10+ application.
+This project can be used as a starting point to create your own Vaadin 14+ application.
 It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
                                               
-Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings to the [Vaadin](https://vaadin.com/flow) framework.
+Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the [Vaadin](https://vaadin.com) framework.
 
 [Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
 
