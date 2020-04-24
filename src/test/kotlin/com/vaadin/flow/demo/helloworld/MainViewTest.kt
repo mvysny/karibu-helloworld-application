@@ -34,7 +34,8 @@ class MainViewTest: DynaTest({
         // which encompasses all visible Vaadin components.
         val main = UI.getCurrent().children.findFirst().get() as MainView
 
-        // however this kind of lookups quickly get pretty complicated. Let's use the _get() function instead,
+        // However when using this kind of low-level lookups, the code quickly gets
+        // pretty complicated. Let's use the _get() function instead,
         // which will walk the UI tree for us. See the next test for details.
     }
 
