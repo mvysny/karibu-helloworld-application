@@ -46,7 +46,7 @@ class MainView : KComposite() {
             // Use TextField for standard text input
             nameField = textField("Your name")
 
-            // Button click listeners can be defined as lambda expressions
+            // Use Button for a clickable button
             greetButton = button("Say hello") {
                 setPrimary(); addClickShortcut(Key.ENTER)
             }
@@ -56,6 +56,8 @@ class MainView : KComposite() {
     init {
         // attach functionality to the UI components.
         // It's a good practice to keep UI functionality separated from UI definition.
+
+        // Button click listeners can be defined as lambda expressions
         greetButton.onLeftClick {
             Notification.show("Hello, ${nameField.value}")
         }
