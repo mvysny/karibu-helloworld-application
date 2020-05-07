@@ -12,6 +12,9 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 
 [Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
 
+> Note: this example project uses Gradle. For Maven-based example project please visit
+> [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu10-helloworld-application-maven).
+
 # Preparing Environment
 
 The Vaadin 14 build requires node.js and npm. You can either use the Vaadin Gradle plugin to install it for
