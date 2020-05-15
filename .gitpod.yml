@@ -15,4 +15,8 @@ tasks:
 vscode:
   extensions:
     - mathiasfrohlich.Kotlin@1.7.1:JQTj+rR3iOJTQi6oN6MLiQ==
+github:
+  prebuilds:
+    master: true
+    branches: true
 
