@@ -1,0 +1,18 @@
+# To open this project in gitpod, visit this URL:
+#
+# https://gitpod.io/#https://github.com/mvysny/karibu10-helloworld-application
+#
+
+# exposed ports
+ports:
+- port: 8080
+  onOpen: open-preview
+# start up tasks
+tasks:
+- init: ./gradlew -Pvaadin.productionMode
+  command: ./gradlew appRun
+# install Kotlin extension
+vscode:
+  extensions:
+    - mathiasfrohlich.Kotlin@1.7.1:JQTj+rR3iOJTQi6oN6MLiQ==
+
