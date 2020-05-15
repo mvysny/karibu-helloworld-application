@@ -142,7 +142,7 @@ The app preview will be started automatically.
 
 Couple of tips:
 * Modify `src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt` to toy with the project.
-* The Gretty/Gradle code hot-reload is broken at the moment. In order to apply
+* The Gretty/Gradle code hot-reload is broken at the moment - see [Issue 63](https://github.com/vaadin/vaadin-gradle-plugin/issues/63). In order to apply
    your changes, you will need to:
    * Focus the "/workspace/karibu10-helloworld-application" tab at the bottom, where the `:appRun` task is running
    * Press `Ctrl+C` to kill Gradle+Gretty
