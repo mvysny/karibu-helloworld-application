@@ -143,7 +143,7 @@ The app preview will be started automatically.
 Couple of tips:
 * Modify `src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt` to toy with the project.
 * The Gretty/Gradle code will hot-reload changes in the `MainView.kt` automatically after a couple of seconds.
-* If the hot-reload fails and you see any nasty java Linking Errors, or if you
+* If the hot-reload fails and you see any nasty java `IllegalAccessErrors`, or if you
   start getting `ERROR dev-webpack` errors, just kill Gretty and start it from scratch:
    * Focus the "/workspace/karibu10-helloworld-application" tab at the bottom, where the `:appRun` task is running
    * Press `Ctrl+C` to kill Gradle+Gretty
