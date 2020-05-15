@@ -133,6 +133,23 @@ Let's look at all files that this project is composed of, and what are the point
 | [MainView.kt](src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt) | When Servlet Container (such as [Tomcat](http://tomcat.apache.org/)) starts your app, it will show the components attached to the main route, in this case, the `MainView` class.
 | [MainViewTest.kt](src/test/kotlin/com/vaadin/flow/demo/helloworld/MainViewTest.kt) | Automatically run by Gradle to test your UI; see [Karibu Testing](https://github.com/mvysny/karibu-testing) for more information.
 
+# GitPod
+
+A preliminary support for editing the project in GitPod is available. Visit the
+[karibu10-helloworld-app on GitPod](https://gitpod.io/#https://github.com/mvysny/karibu10-helloworld-application)
+to start. Please wait a bit to allow GitPod to compile the project and download all files.
+The app preview will be started automatically.
+
+Couple of tips:
+* Modify `src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt` to toy with the project.
+* The Gretty/Gradle code hot-reload is broken at the moment. In order to apply
+   your changes, you will need to:
+   * Focus the "/workspace/karibu10-helloworld-application" tab at the bottom, where the `:appRun` task is running
+   * Press `Ctrl+C` to kill Gradle+Gretty
+   * Run `./gradlew appRun` to recompile and relaunch your project
+   * In the "PREVIEW" window, reload the page.
+
+
 # More Resources
 
 * The DSL technique is used to allow you to nest your components in a structured code. This is provided by the
