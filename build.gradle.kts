@@ -21,6 +21,7 @@ repositories {
 gretty {
     contextPath = "/"
     servletContainer = "jetty9.4"
+    managedClassReload = true
 }
 
 tasks.withType<Test> {
