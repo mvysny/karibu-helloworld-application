@@ -3,18 +3,19 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.72"
-    id("org.gretty") version "3.0.1"
+    id("org.gretty") version "3.0.3"
     war
     id("com.vaadin") version "0.6.0"
 }
 
 val karibudsl_version = "1.0.1"
-val vaadin_version = "14.1.27"
+val vaadin_version = "14.2.0.rc1"
 
 defaultTasks("clean", "build")
 
 repositories {
     jcenter()
+    maven { setUrl("http://maven.vaadin.com/vaadin-prereleases") }
 }
 
 gretty {
