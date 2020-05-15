@@ -21,7 +21,7 @@ repositories {
 gretty {
     contextPath = "/"
     servletContainer = "jetty9.4"
-    managedClassReload = true
+    // managedClassReload = true // temporarily disabled because of https://github.com/gretty-gradle-plugin/gretty/issues/166
 }
 
 tasks.withType<Test> {
