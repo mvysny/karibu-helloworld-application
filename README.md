@@ -157,12 +157,15 @@ Use the following `Dockerfile` to both build the app, and to create a final prod
 
 ```dockerfile
 # Build stage
+
 FROM openjdk:11 AS BUILD
 RUN apt update && apt dist-upgrade -y
 RUN apt install -y npm
 RUN git clone https://github.com/mvysny/karibu10-helloworld-application /app
 WORKDIR app
 RUN ./gradlew -Pvaadin.productionMode
+
+
 # Run stage
 FROM tomcat:9.0.35-jdk11-openjdk
 COPY --from=BUILD /app/build/libs/app.war /usr/local/tomcat/webapps/ROOT.war
