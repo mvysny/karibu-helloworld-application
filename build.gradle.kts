@@ -9,13 +9,12 @@ plugins {
 }
 
 val karibudsl_version = "1.0.1"
-val vaadin_version = "14.2.0.rc1"
+val vaadin_version = "14.2.0"
 
 defaultTasks("clean", "build")
 
 repositories {
     jcenter()
-    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
     maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
 }
 
