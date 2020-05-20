@@ -142,8 +142,6 @@ Use the following `Dockerfile` to both build the app, and to create a final prod
 ```dockerfile
 # Build stage
 FROM openjdk:11 AS BUILD
-RUN apt update && apt dist-upgrade -y
-RUN apt install -y npm
 RUN git clone https://github.com/mvysny/karibu10-helloworld-application /app
 WORKDIR app
 RUN ./gradlew -Pvaadin.productionMode
@@ -162,6 +160,8 @@ To run the app:
 ```bash
 docker run --rm -ti -p 8080:8080 mvy/karibu10
 ```
+
+Now open [http://localhost:8080/](http://localhost:8080/).
 
 # More Resources
 
