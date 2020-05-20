@@ -18,20 +18,14 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 
 # Preparing Environment
 
-The Vaadin 14 build requires node.js and npm. You can either use the Vaadin Gradle plugin to install it for
-you (the `vaadinPrepareNode` task, handy for the CI), or you can install it to your OS:
+Java 8 (or higher) JDK is required.
+
+Vaadin 14 apps also require nodejs and pnpm, but these tools are installed automatically for you
+when you build the app for the first time via Gradle.
+Alternatively, you can install nodejs and npm to your OS:
 
 * Windows: [node.js Download site](https://nodejs.org/en/download/) - use the .msi 64-bit installer
 * Linux: `sudo apt install npm`
-
-To make Vaadin Gradle plugin install node.js+npm for you, just run the following command
-in the project's sources (you only need to run this command once):
-
-```
-./gradlew vaadinPrepareNode
-```
-
-Also make sure that you have Java 8 (or higher) JDK installed.
 
 ## Getting Started
 
@@ -66,23 +60,13 @@ To prepare for development mode, just run:
 ./gradlew clean vaadinPrepareFrontend
 ```
 
-If you don't have node installed, you can use Vaadin plugin to download node.js for you:
-
-```bash
-./gradlew vaadinPrepareNode
-```
-
 To build in production mode, just run:
 
 ```bash
 ./gradlew clean build -Pvaadin.productionMode
 ```
 
-If you don't have node installed in your CI environment, you can use Vaadin plugin to download node.js for you beforehand:
-
-```bash
-./gradlew clean vaadinPrepareNode build -Pvaadin.productionMode
-```
+Vaadin will download nodejs and npm/pnpm automatically for you (handy for CI).
 
 # Workflow
 
