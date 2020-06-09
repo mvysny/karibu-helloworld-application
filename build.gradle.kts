@@ -22,7 +22,6 @@ gretty {
     contextPath = "/"
     servletContainer = "jetty9.4"
     // managedClassReload = true // temporarily disabled because of https://github.com/gretty-gradle-plugin/gretty/issues/166
-    scanInterval = 0 // disabled until a workaround for https://github.com/gretty-gradle-plugin/gretty/issues/169 is found
 }
 
 tasks.withType<Test> {
