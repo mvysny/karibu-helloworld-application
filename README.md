@@ -8,7 +8,19 @@
 This project can be used as a starting point to create your own Vaadin 14+ application.
 It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
-                                              
+
+[MainView.kt](src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt):
+
+```kotlin
+verticalLayout {
+    addClassName("centered-content")
+    nameField = textField("Your name")
+    greetButton = button("Say hello") {
+        setPrimary(); addClickShortcut(Key.ENTER)
+    }
+}
+```
+                                         
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the [Vaadin](https://vaadin.com) framework.
 
 [Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
