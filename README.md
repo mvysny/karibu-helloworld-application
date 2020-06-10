@@ -14,8 +14,8 @@ Just clone this repo and start experimenting! Import it to the IDE of your choic
 ```kotlin
 verticalLayout {
     addClassName("centered-content")
-    nameField = textField("Your name")
-    greetButton = button("Say hello") {
+    textField("Your name")
+    button("Say hello") {
         setPrimary(); addClickShortcut(Key.ENTER)
     }
 }
