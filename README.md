@@ -12,8 +12,7 @@ Just clone this repo and start experimenting! Import it to the IDE of your choic
 [MainView.kt](src/main/kotlin/com/vaadin/flow/demo/helloworld/MainView.kt):
 
 ```kotlin
-verticalLayout {
-    addClassName("centered-content")
+verticalLayout(classNames = "centered-content") {
     textField("Your name")
     button("Say hello") {
         setPrimary(); addClickShortcut(Key.ENTER)
