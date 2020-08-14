@@ -9,7 +9,7 @@ plugins {
 }
 
 val karibudsl_version = "1.0.2"
-val vaadin_version = "14.3.2"
+val vaadin_version = "14.3.3"
 
 defaultTasks("clean", "build")
 
@@ -55,7 +55,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.27")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.1.29")
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.16")
 
     // heroku app runner
