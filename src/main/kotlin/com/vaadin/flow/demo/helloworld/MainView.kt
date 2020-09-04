@@ -20,6 +20,7 @@ import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.dependency.CssImport
 import com.vaadin.flow.component.notification.Notification
+import com.vaadin.flow.component.page.AppShellConfigurator
 import com.vaadin.flow.component.textfield.TextField
 import com.vaadin.flow.router.Route
 import com.vaadin.flow.server.PWA
@@ -28,7 +29,6 @@ import com.vaadin.flow.server.PWA
  * The main view contains a button and a click listener.
  */
 @Route("")
-@PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 @CssImport.Container(value = [  // repeatable annotations are not supported by Kotlin, please vote for https://youtrack.jetbrains.com/issue/KT-12794
     CssImport("./styles/shared-styles.css"),
     CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
@@ -62,3 +62,6 @@ class MainView : KComposite() {
         }
     }
 }
+
+@PWA(name = "Project Base for Vaadin", shortName = "Project Base")
+class AppShell: AppShellConfigurator

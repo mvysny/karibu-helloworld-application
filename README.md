@@ -2,9 +2,9 @@
 [![Heroku](https://heroku-badge.herokuapp.com/?app=karibu10-helloworld-app&style=flat&svg=1)](https://karibu10-helloworld-app.herokuapp.com/)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/mvysny/karibu10-helloworld-application)
 
-# Vaadin 14 Karibu-DSL Example App / Archetype
+# Vaadin 17 Karibu-DSL Example App / Archetype
 
-This project can be used as a starting point to create your own Vaadin 14+ application.
+This project can be used as a starting point to create your own Vaadin 17+ application.
 It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
 
@@ -26,11 +26,13 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 > Note: this example project uses Gradle. For Maven-based example project please visit
 > [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu10-helloworld-application-maven).
 
+For Vaadin 14 project please see the [v14 branch](https://github.com/mvysny/karibu10-helloworld-application/tree/v14).
+
 # Preparing Environment
 
 Java 8 (or higher) JDK is required.
 
-Vaadin 14 apps also require nodejs and pnpm, but these tools are installed automatically for you
+Vaadin 17 apps also require nodejs and pnpm, but these tools are installed automatically for you
 when you build the app for the first time via Gradle.
 Alternatively, you can install nodejs and npm to your OS:
 
@@ -61,9 +63,9 @@ option for a real development.
 
 ## Supported Modes
 
-Runs in Vaadin 14 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
+Runs in Vaadin 17 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
 
-Both the [development and production modes](https://vaadin.com/docs/v14/flow/production/tutorial-production-mode-basic.html) are supported.
+Both the [development and production modes](https://vaadin.com/docs/v17/flow/production/tutorial-production-mode-basic.html) are supported.
 To prepare for development mode, just run:
 
 ```bash

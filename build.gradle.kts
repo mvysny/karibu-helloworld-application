@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.4.0"
     id("org.gretty") version "3.0.3"
     war
-    id("com.vaadin") version "0.8.0"
+    id("com.vaadin") version "0.17.0.0"
 }
 
 val karibudsl_version = "1.0.2"
-val vaadin_version = "14.3.4"
+val vaadin_version = "17.0.0"
 
 defaultTasks("clean", "build")
 
@@ -38,14 +38,8 @@ dependencies {
     // Karibu-DSL dependency
     implementation("com.github.mvysny.karibudsl:karibu-dsl:$karibudsl_version")
 
-    // Vaadin 14
-    implementation("com.vaadin:vaadin-core:${vaadin_version}") {
-        // Webjars are only needed when running in Vaadin 13 compatibility mode
-        listOf("com.vaadin.webjar", "org.webjars.bowergithub.insites",
-                "org.webjars.bowergithub.polymer", "org.webjars.bowergithub.polymerelements",
-                "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents")
-                .forEach { exclude(group = it) }
-    }
+    // Vaadin
+    implementation("com.vaadin:vaadin-core:${vaadin_version}")
     providedCompile("javax.servlet:javax.servlet-api:3.1.0")
 
     // logging
