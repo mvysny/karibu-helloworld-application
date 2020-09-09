@@ -55,11 +55,11 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.2.4")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.2.5")
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.17")
 
     // heroku app runner
-    staging("com.heroku:webapp-runner-main:9.0.31.0")
+    staging("com.heroku:webapp-runner-main:9.0.36.1")
 }
 
 tasks.withType<KotlinCompile> {
