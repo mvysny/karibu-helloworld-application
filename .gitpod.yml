@@ -10,7 +10,7 @@ ports:
 # start up tasks
 tasks:
 - init: ./gradlew -Pvaadin.productionMode
-  command: ./gradlew appRun
+  command: ./gradlew clean build appRun
 # install Kotlin extension
 vscode:
   extensions:
