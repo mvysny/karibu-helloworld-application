@@ -2,7 +2,9 @@
 [![Heroku](https://heroku-badge.herokuapp.com/?app=karibu10-helloworld-app&style=flat&svg=1)](https://karibu10-helloworld-app.herokuapp.com/)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/mvysny/karibu10-helloworld-application)
 
-# Vaadin 17 Karibu-DSL Example App / Archetype
+# Hello, Vaadin 👋
+
+A simple "Hello, World" application in Vaadin 17 and Kotlin.
 
 This project can be used as a starting point to create your own Vaadin 17+ application.
 It has the necessary dependencies and files to get you started.
