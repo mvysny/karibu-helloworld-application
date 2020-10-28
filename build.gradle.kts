@@ -9,7 +9,7 @@ plugins {
 }
 
 val karibudsl_version = "1.0.3"
-val vaadin_version = "14.4.0"
+val vaadin_version = "14.4.2"
 
 defaultTasks("clean", "build")
 
