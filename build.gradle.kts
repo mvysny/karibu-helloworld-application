@@ -84,5 +84,5 @@ vaadin {
     if (gradle.startParameter.taskNames.contains("stage")) {
         productionMode = true
     }
-    pnpmEnable = true
+    pnpmEnable = false  // workaround for https://github.com/vaadin/flow/issues/10571
 }
