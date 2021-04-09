@@ -1,9 +1,3 @@
-buildscript {
-    repositories {
-        maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
-    }
-}
-
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -11,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.4.32"
     id("org.gretty") version "3.0.3"
     war
-    id("com.vaadin") version "0.20.0.0.alpha3"
+    id("com.vaadin") version "20.0.0.alpha6"
 }
 
 val karibudsl_version = "1.0.4"
-val vaadin_version = "20.0.0.alpha5"
+val vaadin_version = "20.0.0.alpha6"
 
 defaultTasks("clean", "build")
 
