@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.4.32"
-    id("org.gretty") version "3.0.3"
+    id("org.gretty") version "3.0.4"
     war
     id("com.vaadin") version "20.0.0.alpha6"
 }
@@ -79,5 +79,4 @@ vaadin {
     if (gradle.startParameter.taskNames.contains("stage")) {
         productionMode = true
     }
-    pnpmEnable = true
 }
