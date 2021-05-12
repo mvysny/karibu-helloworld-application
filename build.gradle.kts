@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.5.0"
     id("org.gretty") version "3.0.4"
     war
-    id("com.vaadin") version "0.14.5.1"
+    id("com.vaadin") version "0.14.6.0"
 }
 
 val karibudsl_version = "1.0.6"
-val vaadin_version = "14.5.5"
+val vaadin_version = "14.6.0"
 
 defaultTasks("clean", "build")
 
@@ -56,7 +56,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.2.12")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.0")
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.19")
 
     // heroku app runner
