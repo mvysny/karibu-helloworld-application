@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.5.21"
-    id("org.gretty") version "3.0.4"
+    id("org.gretty") version "3.0.6"
     war
     id("com.vaadin") version "0.14.6.0"
 }
@@ -15,7 +15,6 @@ defaultTasks("clean", "build")
 
 repositories {
     mavenCentral()
-    jcenter()
     maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
 }
 
