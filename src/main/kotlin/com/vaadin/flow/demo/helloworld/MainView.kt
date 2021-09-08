@@ -16,6 +16,7 @@
 package com.vaadin.flow.demo.helloworld
 
 import com.github.mvysny.karibudsl.v10.*
+import com.github.mvysny.kaributools.setPrimary
 import com.vaadin.flow.component.Key
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.dependency.CssImport
