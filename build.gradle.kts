@@ -2,20 +2,19 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.21"
-    id("org.gretty") version "3.0.4"
+    kotlin("jvm") version "1.5.30"
+    id("org.gretty") version "3.0.6"
     war
     id("com.vaadin") version "20.0.5"
 }
 
-val karibudsl_version = "1.0.7"
+val karibudsl_version = "1.1.0"
 val vaadin_version = "20.0.5"
 
 defaultTasks("clean", "build")
 
 repositories {
     mavenCentral()
-    jcenter()
     maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
     maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
 }
@@ -46,12 +45,12 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:1.7.30")
+    implementation("org.slf4j:slf4j-simple:1.7.32")
 
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.0")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.2")
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.20")
 
     // heroku app runner
@@ -60,6 +59,11 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 // Heroku
