@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.5.31"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "21.0.0"
+    id("com.vaadin") version "21.0.2"
 }
 
 val karibudsl_version = "1.1.0"
-val vaadin_version = "21.0.0"
+val vaadin_version = "21.0.2"
 
 defaultTasks("clean", "build")
 
