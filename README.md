@@ -21,7 +21,7 @@ verticalLayout(classNames = "centered-content") {
     }
 }
 ```
-                                         
+
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the [Vaadin](https://vaadin.com) framework.
 
 [Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
