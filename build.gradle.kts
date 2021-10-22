@@ -56,7 +56,7 @@ dependencies {
 
     // test support
     testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.4")
-    testImplementation("com.github.mvysny.dynatest:dynatest-engine:0.20")
+    testImplementation("com.github.mvysny.dynatest:dynatest:0.22")
 
     // heroku app runner
     staging("com.heroku:webapp-runner-main:9.0.52.0")
