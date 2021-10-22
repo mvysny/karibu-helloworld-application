@@ -8,8 +8,8 @@ plugins {
     id("com.vaadin") version "0.14.6.0"
 }
 
-val karibudsl_version = "1.1.0"
-val vaadin_version = "14.7.1"
+val karibudsl_version = "1.1.1"
+val vaadin_version = "14.7.2"
 
 defaultTasks("clean", "build")
 
