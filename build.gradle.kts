@@ -37,6 +37,7 @@ val staging by configurations.creating
 dependencies {
     // Karibu-DSL dependency
     implementation("com.github.mvysny.karibudsl:karibu-dsl:$karibudsl_version")
+    implementation("com.github.mvysny.karibu-tools:karibu-tools:0.7")
 
     // Vaadin 14
     implementation("com.vaadin:vaadin-core:${vaadin_version}") {
@@ -55,7 +56,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.5")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.6")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.22")
 
     // heroku app runner
