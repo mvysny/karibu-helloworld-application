@@ -5,9 +5,9 @@
 
 # Hello, Vaadin 👋
 
-A simple "Hello, World" application in Vaadin 17 and Kotlin.
+A simple "Hello, World" application in Vaadin 21 and Kotlin.
 
-This project can be used as a starting point to create your own Vaadin 17+ application.
+This project can be used as a starting point to create your own Vaadin application.
 It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
 
@@ -35,7 +35,7 @@ For Vaadin 14 project please see the [v14 branch](https://github.com/mvysny/kari
 
 Java 8 (or higher) JDK is required.
 
-Vaadin 17 apps also require nodejs and pnpm, but these tools are installed automatically for you
+Vaadin apps also require nodejs and pnpm, but these tools are installed automatically for you
 when you build the app for the first time via Gradle.
 Alternatively, you can install nodejs and npm to your OS:
 
@@ -66,9 +66,9 @@ option for a real development.
 
 ## Supported Modes
 
-Runs in Vaadin 17 npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
+Runs in Vaadin npm mode, using the [Vaadin Gradle Plugin](https://github.com/vaadin/vaadin-gradle-plugin).
 
-Both the [development and production modes](https://vaadin.com/docs/v17/flow/production/tutorial-production-mode-basic.html) are supported.
+Both the [development and production modes](https://vaadin.com/docs/v14/guide/production) are supported.
 To prepare for development mode, just run:
 
 ```bash
