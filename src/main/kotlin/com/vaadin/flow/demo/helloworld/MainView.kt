@@ -30,10 +30,8 @@ import com.vaadin.flow.server.PWA
  * The main view contains a button and a click listener.
  */
 @Route("")
-@CssImport.Container(value = [  // repeatable annotations are not supported by Kotlin, please vote for https://youtrack.jetbrains.com/issue/KT-12794
-    CssImport("./styles/shared-styles.css"),
-    CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
-])
+@CssImport("./styles/shared-styles.css")
+@CssImport("./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 class MainView : KComposite() {
     private lateinit var nameField: TextField
     private lateinit var greetButton: Button
