@@ -42,7 +42,7 @@ dependencies {
 
     // Vaadin
     implementation("com.vaadin:vaadin-core:${vaadin_version}")
-    providedCompile("javax.servlet:javax.servlet-api:3.1.0")
+    providedCompile("javax.servlet:javax.servlet-api:4.0.1")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
@@ -52,10 +52,10 @@ dependencies {
 
     // test support
     testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.9")
-    testImplementation("com.github.mvysny.dynatest:dynatest:0.23")
+    testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 
     // heroku app runner
-    staging("com.heroku:webapp-runner-main:9.0.52.0")
+    staging("com.heroku:webapp-runner-main:9.0.52.1")
 }
 
 tasks.withType<KotlinCompile> {
