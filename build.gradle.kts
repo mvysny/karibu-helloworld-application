@@ -52,7 +52,7 @@ dependencies {
 
     // test support
     testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.9")
-    testImplementation("com.github.mvysny.dynatest:dynatest:0.22")
+    testImplementation("com.github.mvysny.dynatest:dynatest:0.23")
 
     // heroku app runner
     staging("com.heroku:webapp-runner-main:9.0.52.0")
