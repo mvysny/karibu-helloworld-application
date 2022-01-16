@@ -5,7 +5,7 @@
 
 # Hello, Vaadin 👋
 
-A simple "Hello, World" application in Vaadin 21 and Kotlin.
+A simple "Hello, World" application in Vaadin 23 and Kotlin.
 
 This project can be used as a starting point to create your own Vaadin application.
 It has the necessary dependencies and files to get you started.
