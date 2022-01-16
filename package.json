@@ -1,6 +1,9 @@
 {
   "name": "no-name",
   "license": "UNLICENSED",
+  "engines": {
+    "node": "16.x"
+  },
   "vaadin": {
     "dependencies": {
       "@polymer/iron-a11y-announcer": "3.0.2",
