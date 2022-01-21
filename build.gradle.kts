@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.6.10"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "23.0.0.alpha2"
+    id("com.vaadin") version "23.0.0.alpha3"
 }
 
 val karibudsl_version = "1.1.1"
-val vaadin_version = "23.0.0.alpha2"
+val vaadin_version = "23.0.0.alpha3"
 
 defaultTasks("clean", "build")
 
@@ -86,5 +86,5 @@ vaadin {
     if (gradle.startParameter.taskNames.contains("stage")) {
         productionMode = true
     }
-    nodeVersion = "v16.13.2" // workaround for https://github.com/vaadin/flow/issues/12732
+//    nodeVersion = "v16.13.2" // workaround for https://github.com/vaadin/flow/issues/12732
 }
