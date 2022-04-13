@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.6.20"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "23.0.3"
+    id("com.vaadin") version "23.0.5"
 }
 
 val karibudsl_version = "1.1.1"
-val vaadin_version = "23.0.3"
+val vaadin_version = "23.0.5"
 
 defaultTasks("clean", "build")
 
@@ -41,9 +41,7 @@ dependencies {
     implementation("com.github.mvysny.karibu-tools:karibu-tools:0.10")
 
     // Vaadin
-    implementation("com.vaadin:vaadin-core:${vaadin_version}") {
-        exclude(module = "fusion-endpoint") // exclude fusion: it brings tons of dependencies (including swagger)
-    }
+    implementation("com.vaadin:vaadin-core:${vaadin_version}")
     providedCompile("javax.servlet:javax.servlet-api:4.0.1")
 
     // logging
@@ -53,7 +51,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.11")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v10:1.3.12")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 
     // heroku app runner
