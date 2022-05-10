@@ -1,22 +1,29 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+// workaround for https://github.com/vaadin/flow/issues/13723
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { setUrl("https://plugins.gradle.org/m2/") }
+    }
+}
+
 plugins {
     kotlin("jvm") version "1.6.21"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "23.0.6"
+    id("com.vaadin") version "23.0.9"
 }
 
 val karibudsl_version = "1.1.1"
-val vaadin_version = "23.0.6"
+val vaadin_version = "23.0.9"
 
 defaultTasks("clean", "build")
 
 repositories {
     mavenCentral()
     maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
-    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
 }
 
 gretty {
@@ -84,5 +91,4 @@ vaadin {
     if (gradle.startParameter.taskNames.contains("stage")) {
         productionMode = true
     }
-//    nodeVersion = "v16.13.2" // workaround for https://github.com/vaadin/flow/issues/12732
 }
