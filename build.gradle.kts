@@ -5,11 +5,11 @@ plugins {
     kotlin("jvm") version "1.7.10"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "23.1.6"
+    id("com.vaadin") version "23.1.7"
 }
 
 val karibudsl_version = "1.1.3"
-val vaadin_version = "23.1.6"
+val vaadin_version = "23.1.7"
 
 defaultTasks("clean", "build")
 
@@ -45,7 +45,7 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:1.7.36")
+    implementation("org.slf4j:slf4j-simple:2.0.0-alpha6")
 
     implementation(kotlin("stdlib-jdk8"))
 
@@ -58,12 +58,12 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 // Heroku
