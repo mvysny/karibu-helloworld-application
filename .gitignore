@@ -7,6 +7,6 @@ local.properties
 out
 target
 node_modules
-webpack.generated.js
+vite.generated.ts
 .npmrc
 frontend/generated
