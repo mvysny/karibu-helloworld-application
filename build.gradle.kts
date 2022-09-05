@@ -45,12 +45,12 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:2.0.0-alpha6")
+    implementation("org.slf4j:slf4j-simple:2.0.0")
 
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v23:1.3.19")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v23:1.3.20")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 
     // heroku app runner
