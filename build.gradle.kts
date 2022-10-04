@@ -5,17 +5,16 @@ plugins {
     kotlin("jvm") version "1.7.20"
     id("org.gretty") version "3.0.6"
     war
-    id("com.vaadin") version "23.2.2"
+    id("com.vaadin") version "23.2.3"
 }
 
 val karibudsl_version = "1.1.3"
-val vaadin_version = "23.2.2"
+val vaadin_version = "23.2.3"
 
 defaultTasks("clean", "build")
 
 repositories {
     mavenCentral()
-    maven { setUrl("https://maven.vaadin.com/vaadin-addons") }
 }
 
 gretty {
@@ -50,7 +49,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v23:1.3.20")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v23:1.3.21")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 
     // heroku app runner
