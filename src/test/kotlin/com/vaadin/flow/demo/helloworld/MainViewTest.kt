@@ -45,10 +45,10 @@ class MainViewTest: DynaTest({
 
     test("test greeting") {
         // simulate an user input
-        _get<TextField> { caption = "Your name" } ._value = "Martin"
+        _get<TextField> { label = "Your name" } ._value = "Martin"
 
         // simulate a button click as if clicked by the user
-        _get<Button> { caption = "Say hello" } ._click()
+        _get<Button> { text = "Say hello" } ._click()
 
         // look up the notification and assert on its value
         expectNotifications("Hello, Martin")
