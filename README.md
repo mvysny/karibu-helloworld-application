@@ -1,5 +1,4 @@
 [![Powered By Vaadin on Kotlin](http://vaadinonkotlin.eu/iconography/vok_badge.svg)](http://vaadinonkotlin.eu)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=karibu10-helloworld-app&style=flat&svg=1)](https://karibu10-helloworld-app.herokuapp.com/)
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/mvysny/karibu10-helloworld-application)
 [![Build Status](https://github.com/mvysny/karibu10-helloworld-application/actions/workflows/gradle.yml/badge.svg)](https://github.com/mvysny/karibu10-helloworld-application/actions/workflows/gradle.yml)
 
@@ -23,8 +22,6 @@ verticalLayout(classNames = "centered-content") {
 ```
 
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the [Vaadin](https://vaadin.com) framework.
-
-[Online Demo of this app](https://karibu10-helloworld-app.herokuapp.com) running on Heroku.
 
 > Note: this example project uses Gradle. For Maven-based example project please visit
 > [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu10-helloworld-application-maven).
