@@ -6,7 +6,7 @@
 #
 # Uses Docker Multi-stage builds: https://docs.docker.com/build/building/multi-stage/
 
-# The "Build" stage. Copies the entire project into the container, into the /karibu10-helloworld-application/ folder, and builds it.
+# The "Build" stage. Copies the entire project into the container, into the /app/ folder, and builds it.
 FROM openjdk:11 AS BUILD
 COPY . /app/
 WORKDIR /app/
