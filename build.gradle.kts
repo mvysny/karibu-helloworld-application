@@ -31,8 +31,6 @@ tasks.withType<Test> {
     }
 }
 
-val staging by configurations.creating
-
 dependencies {
     // Karibu-DSL dependency
     implementation("com.github.mvysny.karibudsl:karibu-dsl:$karibudsl_version")
@@ -51,9 +49,6 @@ dependencies {
     // test support
     testImplementation("com.github.mvysny.kaributesting:karibu-testing-v23:1.3.21")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
-
-    // heroku app runner
-    staging("com.heroku:webapp-runner-main:9.0.52.1")
 }
 
 tasks.withType<KotlinCompile> {
@@ -65,21 +60,3 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
-// Heroku
-tasks {
-    val copyToLib by registering(Copy::class) {
-        into("$buildDir/server")
-        from(staging) {
-            include("webapp-runner*")
-        }
-    }
-    val stage by registering {
-        dependsOn("build", copyToLib)
-    }
-}
-
-vaadin {
-    if (gradle.startParameter.taskNames.contains("stage")) {
-        productionMode = true
-    }
-}
