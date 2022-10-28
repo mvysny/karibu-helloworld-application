@@ -1,4 +1,4 @@
-# Allows you to run this app easily in a docker image.
+# Allows you to run this app easily as a docker container.
 # See README.md for more details.
 #
 # 1. Build the image with: docker build --no-cache -t test/karibu10-helloworld-application:latest .
@@ -12,9 +12,16 @@ COPY . /app/
 WORKDIR /app/
 RUN ./gradlew clean test --no-daemon --info --stacktrace
 RUN ./gradlew build -Pvaadin.productionMode --no-daemon --info --stacktrace
-# At this point, we have the WAR app: /app/build/libs/app.war
+WORKDIR /app/build/distributions/
+RUN ls -la
+RUN unzip app.zip
+# At this point, we have the app (executable bash scrip plus a bunch of jars) in the
+# /app/build/distributions/app/ folder.
 
 # The "Run" stage. Start with a clean image, and copy over just the app itself, omitting gradle, npm and any intermediate build files.
-FROM tomcat:9.0.68-jre17-temurin-jammy
-COPY --from=BUILD /app/build/libs/app.war /usr/local/tomcat/webapps/ROOT.war
+FROM openjdk:11
+COPY --from=BUILD /app/build/distributions/app /app/
+WORKDIR /app/bin
+EXPOSE 8080
+ENTRYPOINT ./app
 
