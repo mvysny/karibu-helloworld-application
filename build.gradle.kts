@@ -53,5 +53,5 @@ java {
 }
 
 application {
-    mainClass.set("com.vaadin.flow.demo.helloworld.MainKt")
+    mainClass.set("com.example.karibudsl.MainKt")
 }
