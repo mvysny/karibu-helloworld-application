@@ -16,7 +16,7 @@ class MainViewTest: DynaTest({
         // Route discovery involves classpath scanning and is an expensive operation.
         // Running the discovery process only once per test run speeds up the test runtime considerably.
         // Discover the routes once and cache the result.
-        routes = Routes().autoDiscoverViews("com.vaadin.flow.demo")
+        routes = Routes().autoDiscoverViews("com.example.karibudsl")
     }
     beforeEach {
         // MockVaadin.setup() registers all @Routes, prepares the Vaadin instances for us
