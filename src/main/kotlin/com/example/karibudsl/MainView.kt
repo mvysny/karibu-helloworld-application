@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.vaadin.flow.demo.helloworld
+package com.example.karibudsl
 
 import com.github.mvysny.karibudsl.v10.*
 import com.github.mvysny.kaributools.setPrimary

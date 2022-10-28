@@ -1,4 +1,4 @@
-package com.vaadin.flow.demo.helloworld
+package com.example.karibudsl
 
 import com.github.mvysny.kaributesting.v10.*
 import com.github.mvysny.dynatest.DynaTest
