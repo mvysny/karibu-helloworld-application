@@ -3,8 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.20"
-    id("org.gretty") version "3.0.6"
-    war
+    id("application")
     id("com.vaadin") version "23.2.6"
 }
 
@@ -15,12 +14,6 @@ defaultTasks("clean", "build")
 
 repositories {
     mavenCentral()
-}
-
-gretty {
-    contextPath = "/"
-    servletContainer = "jetty9.4"
-    // managedClassReload = true // temporarily disabled because of https://github.com/gretty-gradle-plugin/gretty/issues/166
 }
 
 tasks.withType<Test> {
@@ -34,11 +27,10 @@ tasks.withType<Test> {
 dependencies {
     // Karibu-DSL dependency
     implementation("com.github.mvysny.karibudsl:karibu-dsl:$karibudsl_version")
-    implementation("com.github.mvysny.karibu-tools:karibu-tools:0.11")
 
     // Vaadin
     implementation("com.vaadin:vaadin-core:${vaadin_version}")
-    providedCompile("javax.servlet:javax.servlet-api:4.0.1")
+    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:10.0")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
@@ -60,3 +52,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+application {
+    mainClass.set("com.vaadin.flow.demo.helloworld.MainKt")
+}

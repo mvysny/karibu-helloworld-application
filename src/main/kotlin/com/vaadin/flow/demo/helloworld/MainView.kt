@@ -61,6 +61,3 @@ class MainView : KComposite() {
         }
     }
 }
-
-@PWA(name = "Project Base for Vaadin", shortName = "Project Base")
-class AppShell: AppShellConfigurator
