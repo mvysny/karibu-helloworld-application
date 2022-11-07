@@ -26,6 +26,10 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 > Note: this example project uses Gradle. For Maven-based example project please visit
 > [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu10-helloworld-application-maven).
 
+## Online demo
+
+View the [online demo](https://v-herd.eu/karibu10-helloworld-application/).
+
 # Documentation
 
 Please see the [Vaadin Boot](https://github.com/mvysny/vaadin-boot#preparing-environment) documentation
