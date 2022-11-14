@@ -4,11 +4,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.21"
     id("application")
-    id("com.vaadin") version "23.2.7"
+    id("com.vaadin") version "23.2.8"
 }
 
 val karibudsl_version = "1.1.3"
-val vaadin_version = "23.2.7"
+val vaadin_version = "23.2.8"
 
 defaultTasks("clean", "build")
 
