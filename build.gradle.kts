@@ -4,11 +4,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.21"
     id("application")
-    id("com.vaadin") version "23.2.10"
+    id("com.vaadin") version "23.2.11"
 }
 
 val karibudsl_version = "1.1.3"
-val vaadin_version = "23.2.10"
+val vaadin_version = "23.2.11"
 
 defaultTasks("clean", "build")
 
@@ -34,7 +34,7 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:2.0.0")
+    implementation("org.slf4j:slf4j-simple:2.0.4")
 
     implementation(kotlin("stdlib-jdk8"))
 
