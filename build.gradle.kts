@@ -30,7 +30,7 @@ dependencies {
 
     // Vaadin
     implementation("com.vaadin:vaadin-core:${vaadin_version}")
-    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:10.1")
+    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:10.3")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
