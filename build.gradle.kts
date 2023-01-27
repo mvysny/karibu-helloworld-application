@@ -29,7 +29,13 @@ dependencies {
     implementation("com.github.mvysny.karibudsl:karibu-dsl:$karibudsl_version")
 
     // Vaadin
-    implementation("com.vaadin:vaadin-core:${vaadin_version}")
+    implementation("com.vaadin:vaadin-core:${vaadin_version}") {
+        afterEvaluate {
+            if (vaadin.productionMode) {
+                exclude(module = "vaadin-dev-server")
+            }
+        }
+    }
     implementation("com.github.mvysny.vaadin-boot:vaadin-boot:10.3")
 
     // logging
