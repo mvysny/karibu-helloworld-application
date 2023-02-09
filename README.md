@@ -28,7 +28,7 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 
 ## Online demo
 
-View the [online demo](https://v-herd.eu/karibu10-helloworld-application/).
+View the [online demo](https://v-herd.eu/karibu-helloworld-application/).
 
 # Documentation
 
