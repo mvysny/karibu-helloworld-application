@@ -7,7 +7,7 @@ plugins {
     id("com.vaadin") version "23.3.6"
 }
 
-val karibudsl_version = "1.1.3"
+val karibudsl_version = "1.2.0"
 val vaadin_version = "23.3.6"
 
 defaultTasks("clean", "build")
@@ -40,7 +40,7 @@ dependencies {
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:2.0.4")
+    implementation("org.slf4j:slf4j-simple:2.0.6")
 
     implementation(kotlin("stdlib-jdk8"))
 
