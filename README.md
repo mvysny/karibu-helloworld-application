@@ -26,7 +26,7 @@ Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the 
 > Note: this example project uses Gradle. For Maven-based example project please visit
 > [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu-helloworld-application-maven).
 
-* For Vaadin 24+Gradle, please check out the [v24](tree/v24) branch.
+* For Vaadin 24+Gradle, please check out the [v24](../../tree/v24) branch.
 
 ## Online demo
 
