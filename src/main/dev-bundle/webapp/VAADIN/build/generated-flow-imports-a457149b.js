@@ -1,4 +1,4 @@
-import{o as au,i as g,Z as Ot,y as st,a as Id,b as lt,t as Td,x as en,e as Sd,w as nu,r as qo}from"./indexhtml-1c94a1e2.js";/**
+import{o as au,i as g,Z as Ot,y as st,a as Id,b as lt,t as Td,x as en,e as Sd,w as nu,r as qo}from"./indexhtml-0d327099.js";/**
  * @license
  * Copyright (c) 2017 - 2023 Vaadin Ltd.
  * This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
@@ -16,7 +16,7 @@ import{o as au,i as g,Z as Ot,y as st,a as Id,b as lt,t as Td,x as en,e as Sd,w 
  * @license
  * Copyright (c) 2017 - 2023 Vaadin Ltd.
  * This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
- */class uu extends HTMLElement{static get version(){return"24.0.0-rc2"}}customElements.define("vaadin-lumo-styles",uu);/**
+ */class uu extends HTMLElement{static get version(){return"24.0.0"}}customElements.define("vaadin-lumo-styles",uu);/**
  * @license
  * Copyright (c) 2017 - 2023 Vaadin Ltd.
  * This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
@@ -771,7 +771,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  * @license
  * Copyright (c) 2021 - 2023 Vaadin Ltd.
  * This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
- */window.Vaadin||(window.Vaadin={});window.Vaadin.registrations||(window.Vaadin.registrations=[]);window.Vaadin.developmentModeCallback||(window.Vaadin.developmentModeCallback={});window.Vaadin.developmentModeCallback["vaadin-usage-statistics"]=function(){jp()};let Na;const Js=new Set,S=r=>class extends G(r){static get version(){return"24.0.0-rc2"}static finalize(){super.finalize();const{is:e}=this;e&&!Js.has(e)&&(window.Vaadin.registrations.push(this),Js.add(e),window.Vaadin.developmentModeCallback&&(Na=H.debounce(Na,u1,()=>{window.Vaadin.developmentModeCallback["vaadin-usage-statistics"]()}),p1(Na)))}constructor(){super(),document.doctype===null&&console.warn('Vaadin components require the "standards mode" declaration. Please add <!DOCTYPE html> to the HTML document.')}};/**
+ */window.Vaadin||(window.Vaadin={});window.Vaadin.registrations||(window.Vaadin.registrations=[]);window.Vaadin.developmentModeCallback||(window.Vaadin.developmentModeCallback={});window.Vaadin.developmentModeCallback["vaadin-usage-statistics"]=function(){jp()};let Na;const Js=new Set,S=r=>class extends G(r){static get version(){return"24.0.0"}static finalize(){super.finalize();const{is:e}=this;e&&!Js.has(e)&&(window.Vaadin.registrations.push(this),Js.add(e),window.Vaadin.developmentModeCallback&&(Na=H.debounce(Na,u1,()=>{window.Vaadin.developmentModeCallback["vaadin-usage-statistics"]()}),p1(Na)))}constructor(){super(),document.doctype===null&&console.warn('Vaadin components require the "standards mode" declaration. Please add <!DOCTYPE html> to the HTML document.')}};/**
 @license
 Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
