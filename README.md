@@ -24,7 +24,7 @@ verticalLayout(classNames = "centered-content") {
 Uses [Karibu-DSL](https://github.com/mvysny/karibu-dsl) Kotlin bindings for the [Vaadin](https://vaadin.com) framework.
 
 > Note: this example project uses Gradle. For Maven-based example project please visit
-> [karibu10-helloworld-application-maven](https://github.com/mvysny/karibu-helloworld-application-maven).
+> [karibu-helloworld-application-maven](https://github.com/mvysny/karibu-helloworld-application-maven).
 
 ## Online demo
 
