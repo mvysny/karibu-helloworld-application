@@ -1,8 +1,8 @@
 # Allows you to run this app easily as a docker container.
 # See README.md for more details.
 #
-# 1. Build the image with: docker build --no-cache -t test/karibu10-helloworld-application:latest .
-# 2. Run the image with: docker run --rm -ti -p8080:8080 test/karibu10-helloworld-application
+# 1. Build the image with: docker build --no-cache -t test/karibu-helloworld-application:latest .
+# 2. Run the image with: docker run --rm -ti -p8080:8080 test/karibu-helloworld-application
 #
 # Uses Docker Multi-stage builds: https://docs.docker.com/build/building/multi-stage/
 
