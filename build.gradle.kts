@@ -26,7 +26,7 @@ tasks.withType<Test> {
 
 dependencies {
     // Karibu-DSL dependency
-    implementation("com.github.mvysny.karibudsl:karibu-dsl-v24:$karibudsl_version")
+    implementation("com.github.mvysny.karibudsl:karibu-dsl-v23:$karibudsl_version")
 
     // Vaadin
     implementation("com.vaadin:vaadin-core:${vaadin_version}") {
