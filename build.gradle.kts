@@ -7,7 +7,7 @@ plugins {
     id("com.vaadin") version "24.1.0"
 }
 
-val karibudsl_version = "2.0.0"
+val karibudsl_version = "2.0.1"
 val vaadin_version = "24.1.0"
 
 defaultTasks("clean", "build")
@@ -45,7 +45,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.0.2")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.0")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 }
 
