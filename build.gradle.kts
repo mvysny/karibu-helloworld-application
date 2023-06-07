@@ -4,16 +4,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.8.21"
     id("application")
-    id("com.vaadin") version "24.1.0.rc1"
+    id("com.vaadin") version "24.1.0"
 }
 
 val karibudsl_version = "2.0.0"
-val vaadin_version = "24.1.0.rc1"
+val vaadin_version = "24.1.0"
 
 defaultTasks("clean", "build")
 
 repositories {
-    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
     mavenCentral()
 }
 
