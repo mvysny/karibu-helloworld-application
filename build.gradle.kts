@@ -1,14 +1,18 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    // fix for https://github.com/mvysny/vaadin-boot-example-gradle/issues/3
+    dependencies {
+        classpath("com.vaadin:vaadin-prod-bundle:${project.properties["vaadinVersion"]}")
+    }
+}
+
 plugins {
     kotlin("jvm") version "1.9.0"
     id("application")
-    id("com.vaadin") version "24.1.3"
+    id("com.vaadin")
 }
-
-val karibudsl_version = "2.0.1"
-val vaadin_version = "24.1.3"
 
 defaultTasks("clean", "build")
 
@@ -26,10 +30,10 @@ tasks.withType<Test> {
 
 dependencies {
     // Karibu-DSL dependency
-    implementation("com.github.mvysny.karibudsl:karibu-dsl-v23:$karibudsl_version")
+    implementation("com.github.mvysny.karibudsl:karibu-dsl-v23:${properties["karibuDslVersion"]}")
 
     // Vaadin
-    implementation("com.vaadin:vaadin-core:${vaadin_version}") {
+    implementation("com.vaadin:vaadin-core:${properties["vaadinVersion"]}") {
         afterEvaluate {
             if (vaadin.productionMode) {
                 exclude(module = "vaadin-dev")
