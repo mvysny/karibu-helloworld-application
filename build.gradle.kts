@@ -1,14 +1,6 @@
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-buildscript {
-    val vaadinVersion: String by extra
-    // fix for https://github.com/mvysny/vaadin-boot-example-gradle/issues/3
-    dependencies {
-        classpath("com.vaadin:vaadin-prod-bundle:$vaadinVersion")
-    }
-}
-
 val vaadinVersion: String by extra
 val karibuDslVersion: String by extra
 
