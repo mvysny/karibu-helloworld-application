@@ -12,6 +12,6 @@ class AppShell: AppShellConfigurator
 /**
  * Run this function to launch your app in Embedded Jetty.
  */
-fun main(vararg args: String) {
+fun main() {
     VaadinBoot().run()
 }
