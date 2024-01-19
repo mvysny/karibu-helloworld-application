@@ -5,7 +5,7 @@ val vaadinVersion: String by extra
 val karibuDslVersion: String by extra
 
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "1.9.22"
     id("application")
     id("com.vaadin")
 }
@@ -31,21 +31,21 @@ dependencies {
     // Vaadin
     implementation("com.vaadin:vaadin-core:$vaadinVersion") {
         afterEvaluate {
-            if (vaadin.productionMode) {
+            if (vaadin.productionMode.get()) {
                 exclude(module = "vaadin-dev")
             }
         }
     }
-    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:12.1")
+    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:12.2")
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:2.0.7")
+    implementation("org.slf4j:slf4j-simple:2.0.9")
 
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.0")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.1")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 }
 
