@@ -45,7 +45,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.1")
+    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.2")
     testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
 }
 
