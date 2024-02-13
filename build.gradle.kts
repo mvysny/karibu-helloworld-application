@@ -1,13 +1,11 @@
+import com.vaadin.gradle.getBooleanProperty
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val vaadinVersion: String by extra
-val karibuDslVersion: String by extra
-
 plugins {
     kotlin("jvm") version "1.9.22"
-    id("application")
-    id("com.vaadin")
+    application
+    alias(libs.plugins.vaadin)
 }
 
 defaultTasks("clean", "build")
@@ -26,27 +24,27 @@ tasks.withType<Test> {
 
 dependencies {
     // Karibu-DSL dependency
-    implementation("com.github.mvysny.karibudsl:karibu-dsl-v23:$karibuDslVersion")
+    implementation(libs.karibu.dsl)
 
     // Vaadin
-    implementation("com.vaadin:vaadin-core:$vaadinVersion") {
-        afterEvaluate {
-            if (vaadin.productionMode.get()) {
-                exclude(module = "vaadin-dev")
-            }
+    implementation(libs.vaadin.core) {
+        // https://github.com/vaadin/flow/issues/18572
+        if (vaadin.productionMode.map { v -> getBooleanProperty("vaadin.productionMode") ?: v }.get()) {
+            exclude(module = "vaadin-dev")
         }
     }
-    implementation("com.github.mvysny.vaadin-boot:vaadin-boot:12.2")
+    implementation(libs.vaadin.boot)
 
     // logging
     // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
-    implementation("org.slf4j:slf4j-simple:2.0.9")
+    implementation(libs.slf4j.simple)
 
     implementation(kotlin("stdlib-jdk8"))
 
     // test support
-    testImplementation("com.github.mvysny.kaributesting:karibu-testing-v24:2.1.2")
-    testImplementation("com.github.mvysny.dynatest:dynatest:0.24")
+    testImplementation(libs.karibu.testing)
+    testImplementation(libs.dynatest)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 tasks.withType<KotlinCompile> {
