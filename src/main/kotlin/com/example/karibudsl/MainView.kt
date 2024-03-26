@@ -53,7 +53,7 @@ class MainView : KComposite() {
         // It's a good practice to keep UI functionality separated from UI definition.
 
         // Button click listeners can be defined as lambda expressions
-        greetButton.onLeftClick {
+        greetButton.onClick {
             Notification.show("Hello, ${nameField.value}")
         }
     }
