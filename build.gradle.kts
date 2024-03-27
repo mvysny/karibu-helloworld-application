@@ -1,4 +1,3 @@
-import com.vaadin.gradle.getBooleanProperty
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -17,7 +16,6 @@ repositories {
 tasks.withType<Test> {
     useJUnitPlatform()
     testLogging {
-        // to see the exceptions of failed tests in Travis-CI console.
         exceptionFormat = TestExceptionFormat.FULL
     }
 }
