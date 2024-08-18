@@ -41,8 +41,8 @@ dependencies {
 
     // test support
     testImplementation(libs.karibu.testing)
-    testImplementation(libs.dynatest)
-    testRuntimeOnly(libs.junit.platform.launcher)
+    testImplementation(libs.junit)
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<KotlinCompile> {

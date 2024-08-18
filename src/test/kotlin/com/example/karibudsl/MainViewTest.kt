@@ -1,31 +1,36 @@
 package com.example.karibudsl
 
 import com.github.mvysny.kaributesting.v10.*
-import com.github.mvysny.dynatest.DynaTest
 import com.vaadin.flow.component.UI
 import com.vaadin.flow.component.button.Button
 import com.vaadin.flow.component.textfield.TextField
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 /**
  * Tests the UI. Uses the Browserless testing approach as provided by the
  * [Karibu Testing](https://github.com/mvysny/karibu-testing) library.
  */
-class MainViewTest: DynaTest({
-    lateinit var routes: Routes
-    beforeGroup {
-        // Route discovery involves classpath scanning and is an expensive operation.
-        // Running the discovery process only once per test run speeds up the test runtime considerably.
-        // Discover the routes once and cache the result.
-        routes = Routes().autoDiscoverViews("com.example.karibudsl")
+class MainViewTest {
+    companion object {
+        private lateinit var routes: Routes
+        @BeforeAll @JvmStatic fun discoverRoutes() {
+            // Route discovery involves classpath scanning and is an expensive operation.
+            // Running the discovery process only once per test run speeds up the test runtime considerably.
+            // Discover the routes once and cache the result.
+            routes = Routes().autoDiscoverViews("com.example.karibudsl")
+        }
     }
-    beforeEach {
+    @BeforeEach fun setupVaadin() {
         // MockVaadin.setup() registers all @Routes, prepares the Vaadin instances for us
         // (the UI, the VaadinSession, VaadinRequest, VaadinResponse, ...) and navigates to the root route.
         MockVaadin.setup(routes)
     }
-    afterEach { MockVaadin.tearDown() }
+    @AfterEach fun teardownVaadin() { MockVaadin.tearDown() }
 
-    test("smoke test") {
+    @Test fun smokeTest() {
         // Smoke test is a quick test to check that the basic machinery is in place and works.
         // The analogy would be to turn on an electric device (e.g. a coffee maker)
         // then turn it off immediately without even checking whether it actually works or not,
@@ -43,7 +48,7 @@ class MainViewTest: DynaTest({
         _expectOne<MainView>()
     }
 
-    test("test greeting") {
+    @Test fun testGreeting() {
         // simulate an user input
         _get<TextField> { label = "Your name" } ._value = "Martin"
 
@@ -53,4 +58,4 @@ class MainViewTest: DynaTest({
         // look up the notification and assert on its value
         expectNotifications("Hello, Martin")
     }
-})
+}
