@@ -7,5 +7,6 @@ local.properties
 out
 target
 src/main/frontend/generated
+.kotlin
 
 !**/src/main/dev-bundle/webapp/VAADIN/build
