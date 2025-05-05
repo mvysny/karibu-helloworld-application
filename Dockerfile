@@ -7,7 +7,7 @@
 # Uses Docker Multi-stage builds: https://docs.docker.com/build/building/multi-stage/
 
 # The "Build" stage. Copies the entire project into the container, into the /app/ folder, and builds it.
-FROM openjdk:21-bookwork AS builder
+FROM openjdk:21-bookworm AS builder
 COPY . /app/
 WORKDIR /app/
 RUN --mount=type=cache,target=/root/.gradle --mount=type=cache,target=/root/.vaadin ./gradlew clean build -Pvaadin.productionMode --no-daemon --info --stacktrace
