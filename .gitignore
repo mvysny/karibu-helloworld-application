@@ -15,4 +15,5 @@ src/main/frontend/generated
 .project
 bin
 .classpath
+kls_database.db
 
