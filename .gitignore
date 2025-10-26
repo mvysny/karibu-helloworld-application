@@ -10,3 +10,9 @@ src/main/frontend/generated
 .kotlin
 
 !**/src/main/dev-bundle/webapp/VAADIN/build
+
+.settings
+.project
+bin
+.classpath
+
