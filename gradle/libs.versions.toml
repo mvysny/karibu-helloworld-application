@@ -1,5 +1,5 @@
 [versions]
-vaadin = "24.9.7"
+vaadin = "25.0.0"
 # https://repo1.maven.org/maven2/org/slf4j/slf4j-api/
 slf4j = "2.0.17"
 
@@ -8,7 +8,8 @@ slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 vaadin-boot = "com.github.mvysny.vaadin-boot:vaadin-boot:13.5"
 vaadin-core = { module = "com.vaadin:vaadin-core", version.ref = "vaadin" }
-karibu-testing = "com.github.mvysny.kaributesting:karibu-testing-v24:2.4.3"
+vaadin-dev = { module = "com.vaadin:vaadin-dev", version.ref = "vaadin" }
+karibu-testing = "com.github.mvysny.kaributesting:karibu-testing-v24:2.6.0"
 karibu-dsl = "com.github.mvysny.karibudsl:karibu-dsl-v23:2.5.0"
 junit = "org.junit.jupiter:junit-jupiter-engine:6.0.1"
 
