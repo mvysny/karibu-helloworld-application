@@ -21,17 +21,15 @@ tasks.withType<Test> {
     }
 }
 
-vaadin {
-    productionMode = true
-}
-
 dependencies {
     // Karibu-DSL dependency
     implementation(libs.karibu.dsl)
 
     // Vaadin
     implementation(libs.vaadin.core)
-    implementation(libs.vaadin.dev)
+    if (!vaadin.effective.productionMode.get()) {
+        implementation(libs.vaadin.dev)
+    }
     implementation(libs.vaadin.boot)
 
     // logging
