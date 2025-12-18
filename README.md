@@ -4,13 +4,13 @@
 
 # Hello, Vaadin 👋
 
-A simple "Hello, World" application in Vaadin and Kotlin. Uses [Vaadin Boot](https://github.com/mvysny/vaadin-boot). Requires Java 17+.
+A simple "Hello, World" application in Vaadin and Kotlin. Uses [Vaadin Boot](https://github.com/mvysny/vaadin-boot). Requires Java 21+.
 
 This project can be used as a starting point to create your own Vaadin application.
 It has the necessary dependencies and files to get you started.
 Just clone this repo and start experimenting! Import it to the IDE of your choice as a Gradle project.
 
-[MainView.kt](src/main/kotlin/com/example/karibudsl/MainView.kt):
+[MainView.kt](src/main/kotlin/MainView.kt):
 
 ```kotlin
 verticalLayout(classNames = "centered-content") {
@@ -39,7 +39,7 @@ on how you run, develop and package this Vaadin-Boot-based app.
 
 * The DSL technique is used to allow you to nest your components in a structured code. This is provided by the
   Karibu-DSL library; please visit the [Karibu-DSL home page](https://github.com/mvysny/karibu-dsl) for more information.
-* The browserless testing is demonstrated in the [MainViewTest.kt](src/test/kotlin/com/vaadin/flow/demo/helloworld/MainViewTest.kt) file.
+* The browserless testing is demonstrated in the [MainViewTest.kt](src/test/kotlin/MainViewTest.kt) file.
   Please read [Browserless Web Testing](https://github.com/mvysny/karibu-testing) for more information.
 * For more complex example which includes multiple pages, please see the [Beverage Buddy Karibu-DSL example-v10 app](https://github.com/mvysny/karibu-dsl#quickstart-vaadin-10-flow).
   It is a port of the Vaadin official Java [Beverage Buddy App Starter](https://github.com/vaadin/beverage-starter-flow) to Kotlin + Karibu DSL.
