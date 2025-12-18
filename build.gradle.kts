@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.2.20"
+    kotlin("jvm") version "2.2.21"
     application
     alias(libs.plugins.vaadin)
 }
@@ -21,16 +21,17 @@ tasks.withType<Test> {
     }
 }
 
+vaadin {
+    productionMode = true
+}
+
 dependencies {
     // Karibu-DSL dependency
     implementation(libs.karibu.dsl)
 
     // Vaadin
-    implementation(libs.vaadin.core) {
-        if (vaadin.effective.productionMode.get()) {
-            exclude(module = "vaadin-dev")
-        }
-    }
+    implementation(libs.vaadin.core)
+    implementation(libs.vaadin.dev)
     implementation(libs.vaadin.boot)
 
     // logging
