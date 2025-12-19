@@ -20,6 +20,20 @@ tasks.withType<Test> {
         exceptionFormat = TestExceptionFormat.FULL
     }
 }
+// solution from https://discuss.gradle.org/t/exclude-files-from-application-plugin-lib-folder/51815/2
+// works correctly for production builds and `gradle run` but when running MainKt from Intellij, the vaadin-dev deps are not visible
+// on classpath.
+val vaadinDevDependency = configurations.dependencyScope("vaadinDevDependency")
+val vaadinDevRuntimeClasspath = configurations.resolvable("vaadinDevRuntimeClasspath") {
+    extendsFrom(vaadinDevDependency.get())
+    attributes {
+        attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.LIBRARY))
+        attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage.JAVA_RUNTIME))
+        attribute(LibraryElements.LIBRARY_ELEMENTS_ATTRIBUTE, objects.named(LibraryElements.JAR))
+        attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
+        attribute(TargetJvmEnvironment.TARGET_JVM_ENVIRONMENT_ATTRIBUTE, objects.named(TargetJvmEnvironment.STANDARD_JVM))
+    }
+}
 
 dependencies {
     // Karibu-DSL dependency
@@ -27,7 +41,7 @@ dependencies {
 
     // Vaadin
     implementation(libs.vaadin.core)
-    runtimeOnly(libs.vaadin.dev)
+    "vaadinDevDependency"(libs.vaadin.dev)
     implementation(libs.vaadin.boot)
 
     // logging
@@ -57,8 +71,6 @@ application {
     mainClass = "com.example.karibudsl.MainKt"
 }
 
-distributions.main {
-    contents {
-        exclude("**/vaadin-dev-*.jar", "**/copilot-*.jar")
-    }
+tasks.named("run", JavaExec::class) {
+    classpath = objects.fileCollection().from(classpath, vaadinDevRuntimeClasspath)
 }
