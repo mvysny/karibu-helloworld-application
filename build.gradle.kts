@@ -27,9 +27,7 @@ dependencies {
 
     // Vaadin
     implementation(libs.vaadin.core)
-    if (!vaadin.effective.productionMode.get()) {
-        implementation(libs.vaadin.dev)
-    }
+    runtimeOnly(libs.vaadin.dev)
     implementation(libs.vaadin.boot)
 
     // logging
@@ -40,6 +38,10 @@ dependencies {
     testImplementation(libs.karibu.testing)
     testImplementation(libs.junit)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+vaadin {
+    productionMode = true
 }
 
 tasks.withType<KotlinCompile> {
@@ -53,4 +55,10 @@ java {
 
 application {
     mainClass = "com.example.karibudsl.MainKt"
+}
+
+distributions.main {
+    contents {
+        exclude("**/vaadin-dev-*.jar", "**/copilot-*.jar")
+    }
 }
