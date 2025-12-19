@@ -71,6 +71,6 @@ application {
     mainClass = "com.example.karibudsl.MainKt"
 }
 
-tasks.named("run", JavaExec::class) {
+tasks.withType<JavaExec> {
     classpath = objects.fileCollection().from(classpath, vaadinDevRuntimeClasspath)
 }
