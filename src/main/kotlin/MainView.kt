@@ -37,9 +37,7 @@ class MainView : KComposite() {
         verticalLayout(classNames = "centered-content") {
 
             // Use TextField for standard text input
-            nameField = textField("Your name") {
-                addClassName("bordered")
-            }
+            nameField = textField("Your name")
 
             // Use Button for a clickable button
             greetButton = button("Say hello") {
