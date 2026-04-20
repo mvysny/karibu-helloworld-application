@@ -18,6 +18,7 @@ tasks.withType<Test> {
     useJUnitPlatform()
     testLogging {
         exceptionFormat = TestExceptionFormat.FULL
+        showCauses = true
     }
 }
 
