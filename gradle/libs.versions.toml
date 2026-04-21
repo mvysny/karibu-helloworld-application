@@ -6,12 +6,12 @@ slf4j = "2.0.17"
 [libraries]
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
-vaadin-boot = "com.github.mvysny.vaadin-boot:vaadin-boot:13.6"
+vaadin-boot = "com.github.mvysny.vaadin-boot:vaadin-boot:13.7"
 vaadin-core = { module = "com.vaadin:vaadin-core", version.ref = "vaadin" }
 vaadin-dev = { module = "com.vaadin:vaadin-dev", version.ref = "vaadin" }
 karibu-testing = "com.github.mvysny.kaributesting:karibu-testing-v24:2.7.0"
 karibu-dsl = "com.github.mvysny.karibudsl:karibu-dsl-v23:2.6.0"
-junit = "org.junit.jupiter:junit-jupiter-engine:6.0.1"
+junit = "org.junit.jupiter:junit-jupiter-engine:6.0.3"
 
 [plugins]
 vaadin = { id = "com.vaadin", version.ref = "vaadin" }
