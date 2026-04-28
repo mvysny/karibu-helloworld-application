@@ -17,3 +17,6 @@ bin
 .classpath
 kls_database.db
 
+.claude/settings.local.json
+.playwright-mcp/
+
