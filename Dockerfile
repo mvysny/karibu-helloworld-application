@@ -12,14 +12,16 @@ COPY . /app/
 WORKDIR /app/
 RUN --mount=type=cache,target=/root/.gradle,sharing=locked --mount=type=cache,target=/root/.vaadin,sharing=locked ./gradlew clean build -Pvaadin.productionMode --no-daemon --no-watch-fs
 WORKDIR /app/build/distributions/
-RUN tar xvf app.tar
+# The archive, the folder it unpacks to and the start script inside it are all named after
+# rootProject.name, pinned in settings.gradle.kts.
+RUN tar xvf karibu-helloworld-application.tar
 # At this point, we have the app (executable bash scrip plus a bunch of jars) in the
-# /app/build/distributions/app/ folder.
+# /app/build/distributions/karibu-helloworld-application/ folder.
 
 # The "Run" stage. Start with a clean image, and copy over just the app itself, omitting gradle, npm and any intermediate build files.
 FROM eclipse-temurin:21
-COPY --from=builder /app/build/distributions/app /app/
+COPY --from=builder /app/build/distributions/karibu-helloworld-application /app/
 WORKDIR /app/bin
 EXPOSE 8080
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["./karibu-helloworld-application"]
 

@@ -15,7 +15,7 @@ Requires JDK 21+. CI matrix tests against JDK 21 and 25.
 - `./gradlew test --tests com.example.karibudsl.MainViewTest.testGreeting` — run a single test.
 - `./gradlew run` — launch the app locally on http://localhost:8080 (dev mode, with Vaadin dev server).
 - `./gradlew clean build -Pvaadin.productionMode` — production build. The `-Pvaadin.productionMode` flag bundles the frontend and drops `vaadin-dev`; this is also what CI and the Docker build use.
-- `./gradlew build -Pvaadin.productionMode && cd build/distributions && tar xvf app.tar && ./app/bin/app` — run the production distribution locally.
+- `./gradlew build -Pvaadin.productionMode && cd build/distributions && tar xvf karibu-helloworld-application.tar && ./karibu-helloworld-application/bin/karibu-helloworld-application` — run the production distribution locally. The archive is named after `rootProject.name`.
 - `docker build -t test/karibu-helloworld-application:latest . && docker run --rm -ti -p8080:8080 test/karibu-helloworld-application` — containerized production build/run.
 
 `defaultTasks` is set to `clean build`, so a bare `./gradlew` runs both.
@@ -39,8 +39,18 @@ Versions live in `gradle/libs.versions.toml` (Gradle version catalog). Notable p
 - `src/main/resources/webapp/` — served at web root. `ROOT/` contains static files; `styles.css` is referenced by the `@StyleSheet("styles.css")` on `AppShell`.
 - `src/main/resources/simplelogger.properties` — SLF4J-Simple configuration. The app logs via SLF4J → slf4j-simple (no Logback/Log4j).
 
+### Deployment on Shepherd2 (Heroku buildpacks)
+
+Shepherd2 builds with herokuish, not with this repo's `Dockerfile`, so four one-line files in the project root carry the whole deployment config — deploying needs nothing but the buildpack name, no per-app settings on the box.
+
+- **`.env`** — `GRADLE_TASK=clean installDist -Pvaadin.productionMode`. `installDist` rather than `build`: it leaves a runnable start script under `build/install/`, where `build` leaves only a tar that nothing unpacks, and it skips the tests so they don't stand between a commit and a deploy.
+- **`system.properties`** — `java.runtime.version=21`. Without it the buildpack installs the newest LTS (currently 25).
+- **`settings.gradle.kts`** — pins `rootProject.name`, which otherwise follows whatever directory Gradle builds in (`/tmp/build` on the builder) and drags the install path along with it.
+- **`Procfile`** — the `web:` process. Its line is exec'd without a shell, hence the `env` prefix; Vaadin Boot reads `SERVER_PORT`, not `PORT`.
+
 ## Gotchas
 
 - Do not add Spring dependencies — this app deliberately uses Vaadin Boot's plain-Jetty model. Spring-specific Vaadin features (e.g. `@SpringComponent`, security config) won't apply.
 - New views must live in the `com.example.karibudsl` package (or a subpackage) to be found by `autoDiscoverViews` in tests. If you move the package, update the test too.
 - Karibu-Testing requires `MockVaadin.setup()` before any UI interaction and `tearDown()` after — missing either causes confusing failures in subsequent tests.
+- `rootProject.name` (in `settings.gradle.kts`) names the distribution archive and the install directory, so anything that unpacks or launches the build output hardcodes it: the `Dockerfile`'s `tar xvf` / `COPY` paths and the `Procfile`'s start-script path. Rename the project and all of those must move with it.
